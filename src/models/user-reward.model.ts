@@ -1,13 +1,15 @@
 import mongoose, { Schema } from 'mongoose';
 
 interface UserAttrs {
-	data: Schema.Types.Mixed,
-    publicAddress: string
+    publicAddress: string,
+	reward_id: string, 
+    rewardGained: Schema.Types.Decimal128
 }
 
 interface UserDoc extends mongoose.Document {
-	data: Schema.Types.Mixed,
-    publicAddress: string
+	publicAddress: string,
+	reward_id: string, 
+    rewardGained: Schema.Types.Decimal128
 }
 
 interface UserModel extends mongoose.Model<UserDoc> {
@@ -15,8 +17,9 @@ interface UserModel extends mongoose.Model<UserDoc> {
 }
 const userSchema = new mongoose.Schema(
 	{
-		data: {type: Schema.Types.Mixed},
-        publicAddress: {type: String, required: true}
+        publicAddress: {type: String, required: true},
+        reward_id: {type: String},
+        rewardGained: {type: Schema.Types.Decimal128}
 	},
 	{
 		timestamps: true,
@@ -34,9 +37,9 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.statics.build = (attrs: UserAttrs) => {
-	return new User_data(attrs);
+	return new User_reward(attrs);
 };
 
-const User_data = mongoose.model<UserDoc, UserModel>('User_data', userSchema);
+const User_reward = mongoose.model<UserDoc, UserModel>('User_reward', userSchema);
 
-export {User_data};
+export {User_reward};

@@ -11,7 +11,7 @@ router.get('/api/login', async (req: Request, res: Response) => {
 	/*
 		  Assumes DIDToken was passed in the Authorization header
 		  in the standard `Bearer {token}` format.
-		 */
+		   */
 	const magic = new Magic(process.env.MAGIC_SECRET_KEY);
 	if (req.headers && req.headers.authorization) {
 		const DIDToken = req.headers.authorization.substring(7);

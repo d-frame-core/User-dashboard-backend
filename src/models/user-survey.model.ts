@@ -1,13 +1,13 @@
 import mongoose, { Schema } from 'mongoose';
 
 interface UserAttrs {
-	data: Schema.Types.Mixed,
-    publicAddress: string
+	response: Schema.Types.Mixed,
+    walletAddress: string
 }
 
 interface UserDoc extends mongoose.Document {
-	data: Schema.Types.Mixed,
-    publicAddress: string
+	response: Schema.Types.Mixed,
+    walletAddress: string
 }
 
 interface UserModel extends mongoose.Model<UserDoc> {
@@ -15,8 +15,8 @@ interface UserModel extends mongoose.Model<UserDoc> {
 }
 const userSchema = new mongoose.Schema(
 	{
-		data: {type: Schema.Types.Mixed},
-        publicAddress: {type: String, required: true}
+		response: {type: Schema.Types.Mixed},
+        walletAddress: {type: String, required: true}
 	},
 	{
 		timestamps: true,
@@ -34,9 +34,9 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.statics.build = (attrs: UserAttrs) => {
-	return new User_data(attrs);
+	return new User_survey(attrs);
 };
 
-const User_data = mongoose.model<UserDoc, UserModel>('User_data', userSchema);
+const User_survey = mongoose.model<UserDoc, UserModel>('user_survey', userSchema);
 
-export {User_data};
+export {User_survey};

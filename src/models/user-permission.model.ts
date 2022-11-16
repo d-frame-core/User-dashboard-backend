@@ -1,13 +1,15 @@
 import mongoose, { Schema } from 'mongoose';
 
 interface UserAttrs {
-	data: Schema.Types.Mixed,
-    publicAddress: string
+    publicAddress: string,
+	permission_id: string, 
+    isAllowed: boolean
 }
 
 interface UserDoc extends mongoose.Document {
-	data: Schema.Types.Mixed,
-    publicAddress: string
+	publicAddress: string,
+	permission_id: string, 
+    isAllowed: boolean
 }
 
 interface UserModel extends mongoose.Model<UserDoc> {
@@ -15,8 +17,9 @@ interface UserModel extends mongoose.Model<UserDoc> {
 }
 const userSchema = new mongoose.Schema(
 	{
-		data: {type: Schema.Types.Mixed},
-        publicAddress: {type: String, required: true}
+        publicAddress: {type: String, required: true},
+        permission_id: {type: String},
+        isAllowed: {type: Boolean}
 	},
 	{
 		timestamps: true,
@@ -34,9 +37,9 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.statics.build = (attrs: UserAttrs) => {
-	return new User_data(attrs);
+	return new User_permission(attrs);
 };
 
-const User_data = mongoose.model<UserDoc, UserModel>('User_data', userSchema);
+const User_permission = mongoose.model<UserDoc, UserModel>('User_permission', userSchema);
 
-export {User_data};
+export {User_permission};

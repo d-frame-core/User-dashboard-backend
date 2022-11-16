@@ -10,7 +10,7 @@ const start = async () => {
 			useUnifiedTopology: true,
 			useCreateIndex: true,
 			useFindAndModify: true,
-		});
+		}).then(() => {console.log("Connected to database")});
 		Logger.info('=========================================');
 		Logger.info('[INFO]:  ✌️ DB loaded and connected! ✌️');
 		Logger.info('=========================================');
