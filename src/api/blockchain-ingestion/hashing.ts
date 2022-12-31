@@ -69,8 +69,6 @@ const execute = async () => {
         .on('error', function(error: any, receipt: any) {
           console.log(error, receipt)
         });
-
-
     } catch(err) {
         console.log(err)
     }  

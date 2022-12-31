@@ -8,9 +8,11 @@
 		"build": ""
 	},
 	"dependencies": {
+		"@aws-sdk/client-qldb-session": "^3.241.0",
 		"@magic-sdk/admin": "^1.4.1",
 		"@maticnetwork/maticjs-web3": "^1.0.1",
 		"@truffle/hdwallet-provider": "^2.0.13",
+		"amazon-qldb-driver-nodejs": "^3.0.1",
 		"cron": "^2.1.0",
 		"cryptr": "^6.0.3",
 		"dotenv": "^16.0.1",
@@ -18,6 +20,8 @@
 		"express-async-errors": "^3.1.1",
 		"express-validator": "^6.4.0",
 		"helmet": "^3.23.3",
+		"ion-js": "^4.3.0",
+		"jsbi": "^3.2.5",
 		"jshashes": "^1.0.8",
 		"jsonwebtoken": "^8.5.1",
 		"kafkajs": "^2.1.0",
