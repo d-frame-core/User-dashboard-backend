@@ -1,17 +1,15 @@
 import express, {Request, Response} from 'express';
 import { User } from '../../models/user.model';
 import { User_data } from '../../models/user-data.model';
-
-const { Kafka } = require('kafkajs')
-
-const router = express.Router();
+import { Kafka } from 'kafkajs';
 import {Magic, SDKError} from '@magic-sdk/admin';
 
+const router = express.Router();
 
-const kafka = new Kafka({
-	clientId: 'my-app',
-	brokers: [process.env.KAFKA_HOST],
-  })
+// const kafka = new Kafka({
+// 	clientId: 'my-app',
+// 	brokers: [process.env.KAFKA_HOST],
+//   })
 
 router.get('/api/user/update-email', async (req: Request, res: Response) => {
     let email = req.query.email
@@ -74,7 +72,9 @@ router.post('/api/user/updateProfileData/:publicAddress', async (req: Request, r
 			console.log("dataCheck", dataCheck);
 			if (dataCheck == null || undefined) {
 				console.log("data reached");
-			    let mongoData = await User.create(datas) 
+			    let mongoData = await User.create(datas);
+				const initVector = crypto.randomBytes(16).toString('hex')
+				const securityKey = crypto.randomBytes(32).toString('hex')
 			    console.log("mongoData", mongoData);
 			    res.send({data: mongoData})
 			} else {
@@ -135,20 +135,20 @@ router.get('/api/user/updateProfileData/:publicAddress', async (req: Request, re
     // }
 });
 
-router.post('/api/user/dataPostAPI', async (req: Request, res: Response) => {
-    let data = req.body;
-	console.log(req.body)
-	const producer = kafka.producer()
-	console.log(producer)
-    await producer.connect()
+// router.post('/api/user/dataPostAPI', async (req: Request, res: Response) => {
+//     let data = req.body;
+// 	console.log(req.body)
+// 	const producer = kafka.producer()
+// 	console.log(producer)
+//     await producer.connect()
 
-    await producer.send({
-       topic: 'test',
-       messages: [data],	
-    })
-//	let mongoData = await User_data.create(data) 
-//	console.log(mongoData)
-//    res.send({data: mongoData})
-})
+//     await producer.send({
+//        topic: 'test',
+//        messages: [data],	
+//     })
+// //	let mongoData = await User_data.create(data) 
+// //	console.log(mongoData)
+// //    res.send({data: mongoData})
+// })
 
 export{router as userRouter}
