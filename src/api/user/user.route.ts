@@ -1,8 +1,9 @@
 import express, {Request, Response} from 'express';
 import { User } from '../../models/user.model';
 import { User_data } from '../../models/user-data.model';
-import { Kafka } from 'kafkajs';
+// import { Kafka } from 'kafkajs';
 import {Magic, SDKError} from '@magic-sdk/admin';
+import * as crypto from "crypto";
 
 const router = express.Router();
 
@@ -71,10 +72,9 @@ router.post('/api/user/updateProfileData/:publicAddress', async (req: Request, r
 			let dataCheck = await User.findOne({publicAddress: String(datas.publicAddress)});
 			console.log("dataCheck", dataCheck);
 			if (dataCheck == null || undefined) {
-				console.log("data reached");
-			    let mongoData = await User.create(datas);
-				const initVector = crypto.randomBytes(16).toString('hex')
-				const securityKey = crypto.randomBytes(32).toString('hex')
+				const initVector = crypto.randomBytes(32).toString('hex')
+				const securityKey = crypto.randomBytes(64).toString('hex')
+				let mongoData = await User.create(datas);
 			    console.log("mongoData", mongoData);
 			    res.send({data: mongoData})
 			} else {
