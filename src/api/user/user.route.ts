@@ -72,8 +72,8 @@ router.post('/api/user/updateProfileData/:publicAddress', async (req: Request, r
 			let dataCheck = await User.findOne({publicAddress: String(datas.publicAddress)});
 			console.log("dataCheck", dataCheck);
 			if (dataCheck == null || undefined) {
-				const initVector = crypto.randomBytes(32).toString('hex')
-				const securityKey = crypto.randomBytes(64).toString('hex')
+				const initVector = crypto.randomBytes(32).toString('base64');
+				const securityKey = crypto.randomBytes(32).toString('base64');
 				let mongoData = await User.create(datas);
 			    console.log("mongoData", mongoData);
 			    res.send({data: mongoData})
