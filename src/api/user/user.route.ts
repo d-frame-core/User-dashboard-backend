@@ -7,7 +7,6 @@ import { User_data } from '../../models/user-data.model';
 // import { Kafka } from 'kafkajs';
 import { Magic, SDKError } from '@magic-sdk/admin';
 import * as crypto from 'crypto';
-
 const router = express.Router();
 
 // const kafka = new Kafka({

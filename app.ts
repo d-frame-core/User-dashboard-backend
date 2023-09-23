@@ -8,6 +8,7 @@ import { errorHandler, NotFoundError, currentUser, logRequest } from './common';
 import { authRouter } from './src/api/user';
 import { adminRouter } from './src/api/admin';
 import { userRouter } from './src/api/user';
+import { LearnMoreRouter } from './src/api/user/learnmore.route';
 const cors = require('cors');
 const app = express();
 const corsOptions = {
@@ -54,6 +55,7 @@ app.use(currentUser);
 app.use(authRouter);
 app.use(adminRouter);
 app.use(userRouter);
+app.use(LearnMoreRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();
