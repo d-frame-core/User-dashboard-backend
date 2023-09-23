@@ -9,6 +9,8 @@ import { authRouter } from './src/api/user';
 import { adminRouter } from './src/api/admin';
 import { userRouter } from './src/api/user';
 import { LearnMoreRouter } from './src/api/user/learnmore.route';
+import { HelpRouter } from './src/api/user/help.route';
+import { FaqRouter } from './src/api/user/faq.route';
 const cors = require('cors');
 const app = express();
 const corsOptions = {
@@ -56,6 +58,8 @@ app.use(authRouter);
 app.use(adminRouter);
 app.use(userRouter);
 app.use(LearnMoreRouter);
+app.use(HelpRouter);
+app.use(FaqRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();
