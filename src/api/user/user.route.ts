@@ -71,6 +71,7 @@ router.post('/api/user/profileData', async (req: Request, res: Response) => {
   }
 });
 
+/* POST USER DATA IN DATABASE */
 router.post(
   '/api/user/updateProfileData/:publicAddress',
   async (req: Request, res: Response) => {
@@ -116,32 +117,23 @@ router.post(
   }
 );
 
-router.get(
-  '/api/user/updateProfileData/:publicAddress',
-  async (req: Request, res: Response) => {
-    const magic = new Magic(process.env.MAGIC_SECRET_KEY);
-    const userPublicAddress = req.params.publicAddress;
-    console.log(userPublicAddress);
-    try {
-      let dataCheck = await User.findOne({
-        publicAddress: String(userPublicAddress),
-      });
-      if (dataCheck) {
-        console.log(dataCheck);
-        res.send(dataCheck);
-      } else {
-        console.log('Please Update your details');
-      }
-    } catch (err) {
-      if (err instanceof SDKError) {
-        console.log(err);
-      }
+/* CHECK IF USER EXISTS IN DATABASE */
+router.get('/api/users/detail', async (req, res) => {
+  const publicAddress = req.body.publicAddress;
+  try {
+    const user = await User.findOne({ publicAddress: String(publicAddress) });
+    if (user) {
+      return res.status(200).send({ message: 'User exists', data: user });
+    } else {
+      return res.status(404).send({ message: 'User does not exist' });
     }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ message: 'Internal Server error' });
   }
-);
+});
 
-// user.routes.ts
-
+/* ADDING USER DATA to MONGODB */
 router.post('/api/users/userdata', async (req, res) => {
   console.log('Called this');
   const id = req.body.publicAddress;
@@ -267,28 +259,95 @@ router.post('/api/users/userdata', async (req, res) => {
 //     res.status(500).send('Error updating user data');
 //   }
 // });
-// Delete user route
+
+/* DELETING USER FROM BACKEND */
 router.delete('/api/users/delete', async (req, res) => {
-  const id = req.body.publicAddress;
+  const publicAddress = req.body.publicAddress;
   try {
-    // Find the user by publicAddress
-    // const _id = new mongoose.Types.ObjectId(id);
-
-    // Find user by _id
-    const user = await User.findOne({ publicAddress: String(id) });
-
-    console.log('User fetched');
+    const user = await User.findOne({ publicAddress: String(publicAddress) });
 
     if (!user) {
       return res.status(404).send('User not found');
     }
 
     await user.remove();
-    // console.log(user);
-    // Return success response
     res.json({ message: 'User deleted' });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+/* GET USER DATA OF SPECIFIC DATE */
+router.get('/api/users/userdata/specific', async (req, res) => {
+  const { publicAddress, date } = req.body;
+
+  try {
+    const user = await User.findOne({ publicAddress });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    // dataDate is string
+    const data = user.userData.filter((d) => {
+      return d.dataDate === date;
+    });
+
+    res.status(200).send(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error getting user data');
+  }
+});
+
+/* DELETE ALL USER DATA OF GIVEN ADDRESS */
+router.delete('/api/users/userdata/delete', async (req, res) => {
+  const { publicAddress } = req.body;
+
+  try {
+    const user = await User.findOne({ publicAddress });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    // Set userData to empty array
+    user.userData = [];
+
+    await user.save();
+
+    res.send(user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error deleting user data');
+  }
+});
+
+/* DELETE USER DATA OF A SPECIFIC DATE */
+router.delete('/api/users/userdata/specific', async (req, res) => {
+  const { publicAddress, date } = req.body;
+
+  try {
+    const user = await User.findOne({ publicAddress });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const dataIndex = user.userData.findIndex((d) => d.dataDate === date);
+
+    if (dataIndex === -1) {
+      return res.status(404).json({ message: 'No data for given date' });
+    }
+
+    user.userData.splice(dataIndex, 1);
+
+    await user.save();
+
+    res.json(user);
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ message: 'Server error' });
   }
 });
