@@ -6,6 +6,7 @@ import { User_data } from '../../models/user-data.model';
 // import { User } from '../../models/user.data';
 // import { Kafka } from 'kafkajs';
 import { Magic, SDKError } from '@magic-sdk/admin';
+import mongoose from 'mongoose';
 import * as crypto from 'crypto';
 const router = express.Router();
 
@@ -192,22 +193,98 @@ router.post('/api/users/userdata', async (req, res) => {
     res.status(500).send('Error updating user data');
   }
 });
+// router.post('/api/users/userdata', async (req, res) => {
+//   console.log('Handler called');
 
+//   const id = req.body.publicAddress;
+//   const newUserData = req.body.data;
+
+//   try {
+//     const user = await User.findOne({ publicAddress: String(id) });
+
+//     console.log('User fetched');
+
+//     if (!user) {
+//       return res.status(404).send('User not found');
+//     }
+
+//     const newDate = newUserData.dataDate;
+
+//     console.log('New date:', newDate);
+
+//     let existingDataIndex = -1;
+
+//     for (let i = 0; i < user.userData.length; i++) {
+//       console.log('Comparing date:', user.userData[i].dataDate);
+
+//       if (user.userData[i].dataDate === newDate) {
+//         existingDataIndex = i;
+//         break;
+//       }
+//     }
+
+//     if (existingDataIndex !== -1) {
+//       console.log('Existing data found at index:', existingDataIndex);
+
+//       const existingUrlIndex = user.userData[
+//         existingDataIndex
+//       ].urlData.findIndex((url) => url.urlLink === newUserData.urlData.urlLink);
+
+//       if (existingUrlIndex !== -1) {
+//         console.log('Existing URL found at index:', existingUrlIndex);
+
+//         const existingTime =
+//           user.userData[existingDataIndex].urlData[
+//             existingUrlIndex
+//           ].timestamps[0].getTime();
+
+//         const newTime = new Date(newUserData.urlData.timestamps[0]).getTime();
+
+//         if (existingTime === newTime) {
+//           console.log('Same time, pushing new timestamp');
+//           user.userData[existingDataIndex].urlData[
+//             existingUrlIndex
+//           ].timestamps.push(newUserData.urlData.timestamps[0]);
+//         } else {
+//           console.log('Different time, skipping');
+//         }
+//       } else {
+//         console.log('URL not found, adding new entry');
+//         user.userData[existingDataIndex].urlData.push(newUserData.urlData);
+//       }
+//     } else {
+//       console.log('New date, adding new data');
+//       user.userData.push(newUserData);
+//     }
+
+//     await user.save();
+
+//     console.log('User updated successfully');
+
+//     res.send(user);
+//   } catch (err) {
+//     console.error('Error updating user', err);
+//     res.status(500).send('Error updating user data');
+//   }
+// });
 // Delete user route
-router.delete('/api/users', async (req, res) => {
-  const publicAddress = req.body.publicAddress;
-
+router.delete('/api/users/delete', async (req, res) => {
+  const id = req.body.publicAddress;
   try {
     // Find the user by publicAddress
-    const user = await User.findOne({ publicAddress });
+    // const _id = new mongoose.Types.ObjectId(id);
 
-    // If no user, return 404
+    // Find user by _id
+    const user = await User.findOne({ publicAddress: String(id) });
+
+    console.log('User fetched');
+
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).send('User not found');
     }
 
     await user.remove();
-
+    // console.log(user);
     // Return success response
     res.json({ message: 'User deleted' });
   } catch (error) {
