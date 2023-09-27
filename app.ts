@@ -18,7 +18,7 @@ const corsOptions = {
   allowedHeaders: ['Content-Type'], // Add 'Content-Type' to the list of allowed headers
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set('trust proxy', true);

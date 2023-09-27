@@ -118,8 +118,8 @@ router.post(
 );
 
 /* CHECK IF USER EXISTS IN DATABASE */
-router.get('/api/users/detail', async (req, res) => {
-  const publicAddress = req.body.publicAddress;
+router.get('/api/users/detail/:publicAddress', async (req, res) => {
+  const { publicAddress } = req.params;
   try {
     const user = await User.findOne({ publicAddress: String(publicAddress) });
     if (user) {
@@ -349,6 +349,30 @@ router.delete('/api/users/userdata/specific', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error' });
+  }
+});
+
+/* UPDATE DETAILS OF A USER  */
+router.patch('/api/users/detail/:publicAddress', async (req, res) => {
+  const { publicAddress } = req.params;
+  const updatedUserData = req.body;
+
+  try {
+    // Find the user by publicAddress
+    const user = await User.findOne({ publicAddress: String(publicAddress) });
+
+    if (!user) {
+      return res.status(404).send({ message: 'User does not exist' });
+    }
+
+    // Update the user data
+    user.set(updatedUserData);
+    await user.save();
+
+    return res.status(200).send({ message: 'User data updated', data: user });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ message: 'Internal Server error' });
   }
 });
 
