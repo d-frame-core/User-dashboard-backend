@@ -7,10 +7,14 @@ import helmet from 'helmet';
 import { errorHandler, NotFoundError, currentUser, logRequest } from './common';
 import { authRouter } from './src/api/user';
 import { adminRouter } from './src/api/admin';
-import { userRouter } from './src/api/user';
 import { LearnMoreRouter } from './src/api/user/learnmore.route';
 import { HelpRouter } from './src/api/user/help.route';
 import { FaqRouter } from './src/api/user/faq.route';
+import { UserRouter } from './src/api/user/user.route';
+import { KYC1Router } from './src/api/user/kyc1.route';
+import { KYC2Router } from './src/api/user/kyc2.route';
+import { KYC3Router } from './src/api/user/kyc3.route';
+import { UserDataRouter } from './src/api/user/user.data.route';
 const cors = require('cors');
 const app = express();
 const corsOptions = {
@@ -56,10 +60,14 @@ app.use(logRequest);
 app.use(currentUser);
 app.use(authRouter);
 app.use(adminRouter);
-app.use(userRouter);
+app.use(UserRouter);
 app.use(LearnMoreRouter);
 app.use(HelpRouter);
 app.use(FaqRouter);
+app.use(KYC1Router);
+app.use(KYC2Router);
+app.use(KYC3Router);
+app.use(UserDataRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();

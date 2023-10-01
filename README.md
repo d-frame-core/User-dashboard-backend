@@ -57,140 +57,137 @@ This repository contains a guide for the user backend alpha of D FRAME.
 - [typescript](https://www.typescriptlang.org/)
 - [web3](https://web3js.readthedocs.io/en/v1.3.7/)
 
-## Endpoints
+## ENDPOINTS
 
-Base URL: `http://localhost:3000`
+### User Routes (`user.route.ts`)
 
-### User Endpoints
+#### 1. Sign Up
 
-- `GET /api/user/update-email`
+- **Route:** `POST /api/signup/:publicAddress`
+- **Description:** Creates a new user with the specified `publicAddress`. If the user already exists, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/signup/0x659664dd23937edee4f19000066666666D4c93e6`
 
-  - **Description:** This endpoint is used to update the email address associated with a user's account. It requires a user's Digital Identity (DID) token for authorization. The email is updated in the database based on the user's public address obtained from the DID token.
-  - **Example Usage:** `http://localhost:3000/api/user/update-email?email=newemail@example.com`
+#### 2. Get User Details
 
-- `POST /api/user/profileData`
+- **Route:** `GET /api/get/:publicAddress`
+- **Description:** Retrieves user details based on the provided `publicAddress`. If the user does not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/get/0x659664dd23937edee4f19000066666666D4c93e6`
 
-  - **Description:** This endpoint allows users to update their profile data. It expects a JSON payload containing user data. If the user's data does not exist in the database, a new record is created. Otherwise, the existing data is updated.
-  - **Example Usage:** `http://localhost:3000/api/user/profileData`
+#### 3. Get All Users
 
-**The above two endpoints not tested**
+- **Route:** `GET /api/users/getall`
+- **Description:** Retrieves user details from MongoDB. If there are no users, it returns an empty object.
+- **Example Usage:** `http://localhost:3000/api/users/getall`
 
-...............................
+#### 4. Delete User by Public Address
 
-- `POST /api/user/updateProfileData/:publicAddress`
+- **Route:** `DELETE /api/delete/:publicAddress`
+- **Description:** Deletes a user based on the provided `publicAddress`. If the user does not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/delete/0x659664dd23937edee4f19000066666666D4c93e6`
 
-  - **Description:** This endpoint is used to update a user's profile data by specifying their public address as a parameter. It expects a JSON payload containing user data and updates the existing record.
-  - **Example Usage:** `http://localhost:3000/api/user/updateProfileData/0x659664dd23937edee4f19366666666666D4c93e6`
+#### 5. Delete All Users
 
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+- **Route:** `DELETE /api/delete/all`
+- **Description:** Deletes all users from the database.
+- **Example Usage:** `http://localhost:3000/api/delete/all`
 
-  ```json
-  {
-    "firstName": "abu",
-    "lastName": "rasasa",
-    "name": "jacob",
-    "userName": "bile044",
-    "address": "India",
-    "phoneNumber": "7388240798",
-    "isActive": true,
-    "isEmailVerified": true,
-    "email": "ayaanbase@gmail.com",
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6",
-    "earnings": "0"
-  }
-  ```
+---
 
-- `GET /api/users/detail/:publicAddress`
+### KYC1 Routes (`kyc1.route.ts`)
 
-  - **Description:** This endpoint retrieves user details based on their public address. It returns information about the user if found, and a "User not found" message if the user does not exist.
-  - **Example Usage:** `http://localhost:3000/api/users/detail/0x659664dd23937edee4f19366666666666D4c93e6`
+#### 1. Update KYC1 Details
 
-- `POST /api/users/userdata`
+- **Route:** `PATCH /api/kyc1/:publicAddress`
+- **Description:** Updates KYC1 details (first name, last name, phone number, email, and username) for the user with the specified `publicAddress`. If the user does not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/kyc1/0x659664dd23937edee4f19000066666666D4c93e6`
 
-  - **Description:** This endpoint is used to add user data to the MongoDB database. It expects a JSON payload containing user data and ensures that data is correctly associated with the user based on their public address.
-  - **Example Usage:** `http://localhost:3000/api/users/userdata`
+#### 2. Get KYC1 Details
 
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+- **Route:** `GET /api/kyc1/:publicAddress`
+- **Description:** Retrieves KYC1 details for the user with the provided `publicAddress`. If the user or KYC1 details do not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/kyc1/0x659664dd23937edee4f19000066666666D4c93e6`
 
-  ```json
-  {
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6",
-    "data": {
-      "dataDate": "27/09/23",
-      "urlData": {
-        "urlLink": "binance.com",
-        "timestamps": ["11:54:00"],
-        "tags": ["web3", "exchange"]
-      }
-    }
-  }
-  ```
+#### 3. Get Submitted KYC1 Users
 
-- `DELETE /api/users/delete`
+- **Route:** `GET /api/kyc1/getsubmitted`
+- **Description:** Retrieves users with KYC1 submitted but not verified.
+- **Example Usage:** `http://localhost:3000/api/kyc1/getsubmitted`
 
-  - **Description:** This endpoint deletes a user from the backend based on their public address. It removes the user's data from the database.
-  - **Example Usage:** `http://localhost:3000/api/users/delete`
+#### 4. Get Verified KYC1 Users
 
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+- **Route:** `GET /api/kyc1/getverified`
+- **Description:** Retrieves verified users with KYC1.
+- **Example Usage:** `http://localhost:3000/api/kyc1/getverified`
 
-  ```json
-  {
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6"
-  }
-  ```
+---
 
-- `GET /api/users/userdata/specific`
+### KYC2 Routes (`kyc2.route.ts`)
 
-  - **Description:** This endpoint retrieves user data for a specific date. It requires the user's public address and the desired date as parameters.
-  - **Example Usage:** `http://localhost:3000/api/users/userdata/specific`
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+#### 1. Update KYC2 Details
 
-  ```json
-  {
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6",
-    "date": "27/09/23"
-  }
-  ```
+- **Route:** `PATCH /api/kyc2/:publicAddress`
+- **Description:** Updates KYC2 details (gender, country, state, city, street, doorno, pincode, dob, annualIncome, and permanentAddress) for the user with the specified `publicAddress`. If the user does not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/kyc2/0x659664dd23937edee4f19000066666666D4c93e6`
 
-- `DELETE /api/users/userdata/specific`
+#### 2. Get KYC2 Details
 
-  - **Description:** This endpoint deletes user data for a specific date associated with a user's public address.
-  - **Example Usage:** `http://localhost:3000/api/users/userdata/specific`
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+- **Route:** `GET /api/kyc2/:publicAddress`
+- **Description:** Retrieves KYC2 details for the user with the provided `publicAddress`. If the user or KYC2 details do not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/kyc2/0x659664dd23937edee4f19000066666666D4c93e6`
 
-  ```json
-  {
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6",
-    "date": "27/09/23"
-  }
-  ```
+#### 3. Get Submitted KYC2 Users
 
-- `DELETE /api/users/userdata/delete`
+- **Route:** `GET /api/kyc2/getsubmitted`
+- **Description:** Retrieves users with KYC2 submitted but not verified.
+- **Example Usage:** `http://localhost:3000/api/kyc2/getsubmitted`
 
-  - **Description:** This endpoint deletes all user data associated with a given public address.
-  - **Example Usage:** `http://localhost:3000/api/users/userdata/delete`
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+#### 4. Get Verified KYC2 Users
 
-  ```json
-  {
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6"
-  }
-  ```
+- **Route:** `GET /api/kyc2/getverified`
+- **Description:** Retrieves verified users with KYC2.
+- **Example Usage:** `http://localhost:3000/api/kyc2/getverified`
 
-- `PATCH /api/users/detail/:publicAddress`
+---
 
-  - **Description:** This endpoint allows users to update their details. It takes the user's public address as a parameter and expects a JSON payload containing the updated user data.
-  - **Example Usage:** `http://localhost:3000/api/users/detail/0x659664dd23937edee4f19366666666666D4c93e6`
-    **Make sure to pass the following entry points JSON in the request body(EXAMPLE CODE BELOW):**
+### KYC3 Routes (`kyc3.route.ts`)
 
-  ```json
-  {
-    "publicAddress": "0x659664dd23937edee4f19366666666666D4c93e6",
-  }
-  (this will edit user address, pass ANY param which you want to edit like address , firstName to edit that specifically)
-  ```
+#### 1. Update KYC3 Details
 
-These endpoints provide various functionalities for user management and data handling in the D FRAME user backend.
+- **Route:** `PATCH /api/kyc3/:publicAddress`
+- **Description:** Updates KYC3 details, including uploading photos and government ID images for the user with the specified `publicAddress`. If the user does not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/kyc3/0x659664dd23937edee4f19000066666666D4c93e6`
+
+#### 2. Get KYC3 Details
+
+- **Route:** `GET /api/kyc3/:publicAddress`
+- **Description:** Retrieves KYC3 details for the user with the provided `publicAddress`. If the user or KYC3 details do not exist, it returns an error.
+- **Example Usage:** `http://localhost:3000/api/kyc3/0x659664dd23937edee4f19000066666666D4c93e6`
+
+---
+
+### User Data Routes (`user.data.route.ts`)
+
+#### 1. Add User Data
+
+- **Route:** `POST /api/user-data/:publicAddress`
+- **Description:** Adds user data for a specific date. If data for the same date exists, it updates it.
+- **Example Usage:** `http://localhost:3000/api/user-data/0x659664dd23937edee4f19000066666666D4c93e6`
+
+#### 2. Get User Data
+
+- **Route:** `GET /api/user-data/:publicAddress`
+- **Description:** Retrieves all user data for the specified user.
+- **Example Usage:** `http://localhost:3000/api/user-data/0x659664dd23937edee4f19000066666666D4c93e6`
+
+#### 3. Delete User Data
+
+- **Route:** `DELETE /api/user-data/:publicAddress`
+- **Description:** Deletes all user data for the specified user.
+- **Example Usage:** `http://localhost:3000/api/user-data/0x659664dd23937edee4f19000066666666D4c93e6`
+
+---
+
+Please make sure to update and customize the documentation according to your specific needs, including any additional details or authentication requirements.
 
 ## Testing Software
 

@@ -2,19 +2,51 @@
 
 import mongoose from 'mongoose';
 
-interface UserAttrs {
-  firstName: string;
-  lastName: string;
-  name: string;
-  userName: string;
-  address: string;
-  phoneNumber: string;
-  isActive: boolean;
-  isEmailVerified: boolean;
-  email: string;
+// Define the KYC2Details interface
+interface KYC2Details {
+  gender?: string;
+  country?: string;
+  state?: string;
+  city?: string;
+  street?: string;
+  doorno?: string;
+  pincode?: string;
+  dob?: string;
+  annualIncome?: string;
+  permanentAddress?: string;
+}
+
+// Define the KYC3Details interface
+interface KYC3Details {
+  photoUrl?: string;
+  governmentId1Url?: string;
+  governmentId2Url?: string;
+}
+
+interface DFrameUserAttrs {
   publicAddress: string;
-  earnings: string;
-  userData: {
+  firstName?: string;
+  lastName?: string;
+  userName?: string;
+  phoneNumber?: string;
+  email?: string;
+  earnings?: string;
+  profileImage?: string;
+  address1?: [
+    {
+      data?: string;
+      image?: string;
+      verified?: boolean;
+    }
+  ];
+  address2?: [
+    {
+      data?: string;
+      image?: string;
+      verified?: boolean;
+    }
+  ];
+  userData?: {
     dataDate: string;
     urlData: {
       urlLink: string;
@@ -22,22 +54,54 @@ interface UserAttrs {
       tags: string[];
     }[];
   }[];
+  referrals?: string[];
+  kyc1?: {
+    status?: boolean;
+    verified?: boolean;
+    details?: {
+      firstName?: string;
+      lastName?: string;
+      userName?: string;
+      phoneNumber?: string;
+      email?: string;
+    };
+  };
+  kyc2?: {
+    status?: boolean;
+    verified?: boolean;
+    details?: KYC2Details;
+  };
+  kyc3?: {
+    status?: boolean;
+    verified?: boolean;
+    details?: KYC3Details;
+  };
 }
 
-interface UserDoc extends mongoose.Document {
-  firstName: string;
-  lastName: string;
-  name: string;
-  userName: string;
-  address: string;
-  phoneNumber: string;
-  isActive: boolean;
-  isEmailVerified: boolean;
-  email: string;
+interface DFrameUserDoc extends mongoose.Document {
   publicAddress: string;
-  earnings: string;
-  // firstLogin: boolean;
-  userData: {
+  firstName?: string;
+  lastName?: string;
+  userName?: string;
+  phoneNumber?: string;
+  email?: string;
+  earnings?: string;
+  profileImage?: string;
+  address1?: [
+    {
+      data?: string;
+      image?: string;
+      verified?: boolean;
+    }
+  ];
+  address2?: [
+    {
+      data?: string;
+      image?: string;
+      verified?: boolean;
+    }
+  ];
+  userData?: {
     dataDate: string;
     urlData: {
       urlLink: string;
@@ -45,24 +109,54 @@ interface UserDoc extends mongoose.Document {
       tags: string[];
     }[];
   }[];
+  referrals?: string[];
+  kyc1?: {
+    status?: boolean;
+    verified?: boolean;
+    details?: {
+      firstName?: string;
+      lastName?: string;
+      userName?: string;
+      phoneNumber?: string;
+      email?: string;
+    };
+  };
+  kyc2?: {
+    status?: boolean;
+    verified?: boolean;
+    details?: KYC2Details;
+  };
+  kyc3?: {
+    status?: boolean;
+    verified?: boolean;
+    details?: KYC3Details;
+  };
 }
 
-interface UserModel extends mongoose.Model<UserDoc> {
-  build(attrs: UserAttrs): UserDoc;
-}
-const userSchema = new mongoose.Schema(
+const dFrameUserSchema = new mongoose.Schema(
   {
-    firstName: { type: String, required: false },
-    lastName: { type: String, required: false },
-    name: { type: String },
-    userName: { type: String },
-    phoneNumber: { type: String },
-    address: { type: String },
-    email: { type: String, required: true },
-    isActive: { type: Boolean, required: true },
-    isEmailVerified: { type: Boolean, default: false },
     publicAddress: { type: String, required: true, unique: true },
-    earnings: { type: String, required: true },
+    firstName: { type: String, default: '' },
+    lastName: { type: String, default: '' },
+    userName: { type: String, default: '' },
+    phoneNumber: { type: String, default: '' },
+    email: { type: String, default: '' },
+    earnings: { type: String, default: '' },
+    profileImage: { type: String, default: '' },
+    address1: [
+      {
+        data: { type: String, default: '' },
+        image: { type: String, default: '' },
+        verified: { type: Boolean, default: false },
+      },
+    ],
+    address2: [
+      {
+        data: { type: String, default: '' },
+        image: { type: String, default: '' },
+        verified: { type: Boolean, default: false },
+      },
+    ],
     userData: [
       {
         dataDate: String,
@@ -75,14 +169,48 @@ const userSchema = new mongoose.Schema(
         ],
       },
     ],
+    referrals: { type: [String], default: [] },
+    kyc1: {
+      status: { type: Boolean, default: false },
+      verified: { type: Boolean, default: false },
+      details: {
+        firstName: { type: String, default: '' },
+        lastName: { type: String, default: '' },
+        userName: { type: String, default: '' },
+        phoneNumber: { type: String, default: '' },
+        email: { type: String, default: '' },
+      },
+    },
+    kyc2: {
+      status: { type: Boolean, default: false },
+      verified: { type: Boolean, default: false },
+      details: {
+        gender: { type: String, default: '' },
+        country: { type: String, default: '' },
+        state: { type: String, default: '' },
+        city: { type: String, default: '' },
+        street: { type: String, default: '' },
+        doorno: { type: String, default: '' },
+        pincode: { type: String, default: '' },
+        dob: { type: String, default: '' },
+        annualIncome: { type: String, default: '' },
+        permanentAddress: { type: String, default: '' },
+      },
+    },
+    kyc3: {
+      status: { type: Boolean, default: false },
+      verified: { type: Boolean, default: false },
+      details: {
+        photoUrl: { type: String, default: '' },
+        governmentId1Url: { type: String, default: '' },
+        governmentId2Url: { type: String, default: '' },
+      },
+    },
   },
   {
     timestamps: true,
     toJSON: {
       transform(doc, ret) {
-        /*
-                    '_id' is transformed to 'id' as later people can use different databases and different languages as part of microservices architecture so 'id' is more standard key in databases, only mongodb uses '_id'
-                */
         ret.id = ret._id;
         delete ret._id;
         delete ret.__v;
@@ -91,10 +219,13 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-userSchema.statics.build = (attrs: UserAttrs) => {
-  return new User(attrs);
+dFrameUserSchema.statics.build = (attrs: DFrameUserAttrs) => {
+  return new DFrameUser(attrs);
 };
 
-const User = mongoose.model<UserDoc, UserModel>('User', userSchema);
+const DFrameUser = mongoose.model<DFrameUserDoc>(
+  'DFrameUser',
+  dFrameUserSchema
+);
 
-export { User };
+export { DFrameUser };
