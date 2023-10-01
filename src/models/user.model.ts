@@ -54,7 +54,7 @@ interface DFrameUserAttrs {
       tags: string[];
     }[];
   }[];
-  referrals?: string[];
+  referrals?: string;
   kyc1?: {
     status?: boolean;
     verified?: boolean;
@@ -109,7 +109,7 @@ interface DFrameUserDoc extends mongoose.Document {
       tags: string[];
     }[];
   }[];
-  referrals?: string[];
+  referrals?: string;
   kyc1?: {
     status?: boolean;
     verified?: boolean;
@@ -169,7 +169,7 @@ const dFrameUserSchema = new mongoose.Schema(
         ],
       },
     ],
-    referrals: { type: [String], default: [] },
+    referrals: { type: String, default: '' },
     kyc1: {
       status: { type: Boolean, default: false },
       verified: { type: Boolean, default: false },

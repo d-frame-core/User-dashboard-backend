@@ -54,6 +54,30 @@ router.get('/api/get/:publicAddress', async (req: Request, res: Response) => {
   }
 });
 
+router.patch(
+  '/api/referral/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+    const { referral } = req.body;
+
+    try {
+      // Find the user by their publicAddress
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      user.referrals = referral;
+      await user.save();
+      res.status(201).send(user);
+    } catch (error) {
+      console.error('Error fetching user:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
+
 // GET /api/users/getall
 router.get('/api/users/getall', async (req: Request, res: Response) => {
   try {

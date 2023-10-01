@@ -9631,3 +9631,1383 @@
 [35m[39m
 2023-10-01 17:24:05:245 [35mhttp[39m: [35mPOST /api/user-data/0x5Ef4331edbBFEE33e6fAD52Fe77cd504b5b54f29 200 1160 - 95.460 ms[39m
 [35m[39m
+2023-10-01 18:14:03:143 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:14:03:143 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-01 18:14:03:143 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:14:03:143 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:14:03:143 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-01 18:14:03:143 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 3.631 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 1.308 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.580 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.471 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.484 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.499 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.402 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.480 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.819 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.631 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.631 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.332 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.312 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.315 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.088 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.525 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.396 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.758 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.499 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.207 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.595 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.935 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.742 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.792 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.895 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.687 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.670 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.521 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.456 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.670 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mPOST /users/signup 404 25 - 2.305 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.662 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.570 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.731 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.610 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.980 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.522 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.519 ms[39m
+[35m[39m
+2023-10-01 18:17:18:1718 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.658 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.749 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.629 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.753 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.471 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.482 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.685 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.212 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.773 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 3.100 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.542 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.811 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.631 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.823 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.503 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.395 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.661 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.564 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.796 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.632 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.682 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.509 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.501 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.620 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.643 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.733 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.833 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.684 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.249 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.315 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.843 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.766 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.647 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.602 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.649 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.849 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.678 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.475 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.330 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.377 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.662 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.313 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.604 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.628 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.442 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.385 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.366 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.686 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.549 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.492 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.436 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 1.084 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.750 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.583 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.757 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.825 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.732 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.770 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.642 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.704 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.350 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.750 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.495 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.685 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.266 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.512 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.531 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.736 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.760 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.413 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.558 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.423 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.576 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.591 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.746 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.922 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.856 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.612 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.478 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.507 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.573 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.445 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.502 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.767 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.515 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.236 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.739 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.549 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.754 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.603 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.391 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.866 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.401 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.721 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.458 ms[39m
+[35m[39m
+2023-10-01 18:17:19:1719 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.457 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.802 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.520 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.759 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.727 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.721 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.728 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.477 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.836 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.652 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.316 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.540 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.763 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.560 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.681 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 1.173 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.708 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.585 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.728 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.059 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.677 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.675 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.640 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.682 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.540 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.595 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.813 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.610 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.777 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.691 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.652 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.671 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 1.176 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.304 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.745 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.462 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.536 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.696 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.959 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.706 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.594 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.786 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.717 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.924 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.388 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.630 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.723 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.586 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.630 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.070 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.645 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.566 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.626 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.881 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.596 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.584 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.734 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.702 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.577 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.632 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.683 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 2.216 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.609 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.596 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.508 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.617 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 1.023 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.749 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.847 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.635 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.884 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.832 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.720 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.974 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.425 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.358 ms[39m
+[35m[39m
+2023-10-01 18:17:20:1720 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.446 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.450 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.498 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.431 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.640 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.746 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.884 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.848 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.843 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.557 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.674 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.633 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.689 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.567 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.825 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.683 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.431 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.535 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.486 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.426 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.507 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.598 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.539 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.797 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.839 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.762 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.400 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.371 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.488 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.628 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.443 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.485 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.754 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.445 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.502 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.678 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.532 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.390 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.636 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.443 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.399 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.674 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.536 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.653 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.853 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.749 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.928 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.584 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.689 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.618 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.645 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.521 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.462 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.965 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.654 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.471 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.389 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.620 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.577 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.466 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.519 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.326 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.348 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.490 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.645 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.534 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.374 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.899 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.596 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.634 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.450 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.787 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.742 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.381 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.374 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.317 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.419 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.364 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.491 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.307 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.373 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.439 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.469 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.380 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.440 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.452 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.398 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.480 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.393 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.507 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.398 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.432 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.424 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.339 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.349 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.488 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.396 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.588 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.544 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.395 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.531 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.682 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.587 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.379 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.453 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.381 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.418 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.336 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.568 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.400 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.576 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.387 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.377 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.440 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.373 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.302 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.376 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.443 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.440 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.383 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.592 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.415 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.399 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.499 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.601 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.479 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.685 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.459 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.788 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.701 ms[39m
+[35m[39m
+2023-10-01 18:17:21:1721 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.389 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.549 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.426 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.523 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.490 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.537 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.770 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.454 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.430 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.431 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.396 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.665 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.453 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.536 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.583 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.744 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.674 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.565 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.613 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.534 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.591 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.693 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.650 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.709 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.547 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.532 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.419 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.339 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.380 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.519 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.517 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.549 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.347 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.332 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.394 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.461 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.332 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.384 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.369 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.379 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.371 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.530 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.564 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.394 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.408 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.349 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.497 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.581 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.433 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.382 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.562 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.369 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.457 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.392 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.514 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.485 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.557 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.401 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.589 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.428 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.441 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.514 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.393 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.463 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.459 ms[39m
+[35m[39m
+2023-10-01 18:17:22:1722 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.346 ms[39m
+[35m[39m
+2023-10-01 18:17:30:1730 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.335 ms[39m
+[35m[39m
+2023-10-01 18:17:40:1740 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.393 ms[39m
+[35m[39m
+2023-10-01 18:17:50:1750 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.402 ms[39m
+[35m[39m
+2023-10-01 18:18:00:180 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.353 ms[39m
+[35m[39m
+2023-10-01 18:18:10:1810 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.309 ms[39m
+[35m[39m
+2023-10-01 18:18:20:1820 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.308 ms[39m
+[35m[39m
+2023-10-01 18:18:22:1822 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.603 ms[39m
+[35m[39m
+2023-10-01 18:18:22:1822 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.429 ms[39m
+[35m[39m
+2023-10-01 18:18:22:1822 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.816 ms[39m
+[35m[39m
+2023-10-01 18:18:22:1822 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.450 ms[39m
+[35m[39m
+2023-10-01 18:18:22:1822 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.411 ms[39m
+[35m[39m
+2023-10-01 18:18:22:1822 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.519 ms[39m
+[35m[39m
+2023-10-01 18:18:30:1830 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.584 ms[39m
+[35m[39m
+2023-10-01 18:18:40:1840 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.308 ms[39m
+[35m[39m
+2023-10-01 18:18:50:1850 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.363 ms[39m
+[35m[39m
+2023-10-01 18:18:56:1856 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.320 ms[39m
+[35m[39m
+2023-10-01 18:18:56:1856 [35mhttp[39m: [35mPOST /users/signup 404 25 - 0.392 ms[39m
+[35m[39m
+2023-10-01 18:18:56:1856 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.591 ms[39m
+[35m[39m
+2023-10-01 18:18:56:1856 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.581 ms[39m
+[35m[39m
+2023-10-01 18:18:56:1856 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.431 ms[39m
+[35m[39m
+2023-10-01 18:18:56:1856 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 1.490 ms[39m
+[35m[39m
+2023-10-01 18:19:00:190 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.458 ms[39m
+[35m[39m
+2023-10-01 18:19:10:1910 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.369 ms[39m
+[35m[39m
+2023-10-01 18:19:17:1917 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.453 ms[39m
+[35m[39m
+2023-10-01 18:19:17:1917 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.654 ms[39m
+[35m[39m
+2023-10-01 18:19:17:1917 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.646 ms[39m
+[35m[39m
+2023-10-01 18:19:17:1917 [35mhttp[39m: [35mGET /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 25 - 0.567 ms[39m
+[35m[39m
+2023-10-01 18:19:20:1920 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.375 ms[39m
+[35m[39m
+2023-10-01 18:19:30:1930 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.344 ms[39m
+[35m[39m
+2023-10-01 18:19:40:1940 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.367 ms[39m
+[35m[39m
+2023-10-01 18:19:50:1950 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.408 ms[39m
+[35m[39m
+2023-10-01 18:19:55:1955 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 26 - 49.024 ms[39m
+[35m[39m
+2023-10-01 18:19:55:1955 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 26 - 41.791 ms[39m
+[35m[39m
+2023-10-01 18:19:58:1958 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 26 - 51.476 ms[39m
+[35m[39m
+2023-10-01 18:19:58:1958 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 26 - 95.962 ms[39m
+[35m[39m
+2023-10-01 18:19:58:1958 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 26 - 130.786 ms[39m
+[35m[39m
+2023-10-01 18:19:58:1958 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 404 26 - 168.959 ms[39m
+[35m[39m
+2023-10-01 18:20:00:200 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.534 ms[39m
+[35m[39m
+2023-10-01 18:20:10:2010 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.362 ms[39m
+[35m[39m
+2023-10-01 18:20:20:2020 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.317 ms[39m
+[35m[39m
+2023-10-01 18:20:30:2030 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.607 ms[39m
+[35m[39m
+2023-10-01 18:20:40:2040 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.303 ms[39m
+[35m[39m
+2023-10-01 18:20:50:2050 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.710 ms[39m
+[35m[39m
+2023-10-01 18:21:00:210 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.322 ms[39m
+[35m[39m
+2023-10-01 18:21:09:219 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 201 752 - 117.204 ms[39m
+[35m[39m
+2023-10-01 18:21:09:219 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 500 33 - 124.523 ms[39m
+[35m[39m
+2023-10-01 18:21:09:219 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 200 752 - 43.799 ms[39m
+[35m[39m
+2023-10-01 18:21:09:219 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 43.988 ms[39m
+[35m[39m
+2023-10-01 18:21:09:219 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 52.460 ms[39m
+[35m[39m
+2023-10-01 18:21:09:219 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 42.630 ms[39m
+[35m[39m
+2023-10-01 18:21:10:2110 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.327 ms[39m
+[35m[39m
+2023-10-01 18:21:20:2120 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.380 ms[39m
+[35m[39m
+2023-10-01 18:21:30:2130 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.369 ms[39m
+[35m[39m
+2023-10-01 18:21:40:2140 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.372 ms[39m
+[35m[39m
+2023-10-01 18:21:43:2143 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 43.778 ms[39m
+[35m[39m
+2023-10-01 18:21:43:2143 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 48.217 ms[39m
+[35m[39m
+2023-10-01 18:21:50:2150 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.391 ms[39m
+[35m[39m
+2023-10-01 18:22:00:220 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.309 ms[39m
+[35m[39m
+2023-10-01 18:22:10:2210 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.322 ms[39m
+[35m[39m
+2023-10-01 18:22:18:2218 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 42.657 ms[39m
+[35m[39m
+2023-10-01 18:22:20:2220 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.334 ms[39m
+[35m[39m
+2023-10-01 18:22:30:2230 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.317 ms[39m
+[35m[39m
+2023-10-01 18:22:36:2236 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 46.143 ms[39m
+[35m[39m
+2023-10-01 18:22:40:2240 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.323 ms[39m
+[35m[39m
+2023-10-01 18:22:50:2250 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.574 ms[39m
+[35m[39m
+2023-10-01 18:23:00:230 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.391 ms[39m
+[35m[39m
+2023-10-01 18:23:01:231 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.767 ms[39m
+[35m[39m
+2023-10-01 18:23:01:231 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 39.043 ms[39m
+[35m[39m
+2023-10-01 18:23:03:233 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 45.319 ms[39m
+[35m[39m
+2023-10-01 18:23:03:233 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 54.669 ms[39m
+[35m[39m
+2023-10-01 18:23:10:2310 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.410 ms[39m
+[35m[39m
+2023-10-01 18:23:20:2320 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.342 ms[39m
+[35m[39m
+2023-10-01 18:23:30:2330 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.317 ms[39m
+[35m[39m
+2023-10-01 18:23:40:2340 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.897 ms[39m
+[35m[39m
+2023-10-01 18:23:44:2344 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.330 ms[39m
+[35m[39m
+2023-10-01 18:23:44:2344 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 39.688 ms[39m
+[35m[39m
+2023-10-01 18:23:44:2344 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 40.832 ms[39m
+[35m[39m
+2023-10-01 18:23:44:2344 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 39.508 ms[39m
+[35m[39m
+2023-10-01 18:23:50:2350 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.433 ms[39m
+[35m[39m
+2023-10-01 18:23:52:2352 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 42.072 ms[39m
+[35m[39m
+2023-10-01 18:23:52:2352 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 46.284 ms[39m
+[35m[39m
+2023-10-01 18:23:52:2352 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 53.145 ms[39m
+[35m[39m
+2023-10-01 18:23:52:2352 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 42.482 ms[39m
+[35m[39m
+2023-10-01 18:24:00:240 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.338 ms[39m
+[35m[39m
+2023-10-01 18:24:10:2410 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.368 ms[39m
+[35m[39m
+2023-10-01 18:24:20:2420 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.313 ms[39m
+[35m[39m
+2023-10-01 18:24:30:2430 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.940 ms[39m
+[35m[39m
+2023-10-01 18:24:39:2439 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 71.883 ms[39m
+[35m[39m
+2023-10-01 18:24:40:2440 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.318 ms[39m
+[35m[39m
+2023-10-01 18:24:40:2440 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 39.210 ms[39m
+[35m[39m
+2023-10-01 18:24:50:2450 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.347 ms[39m
+[35m[39m
+2023-10-01 18:25:00:250 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.453 ms[39m
+[35m[39m
+2023-10-01 18:25:04:254 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.360 ms[39m
+[35m[39m
+2023-10-01 18:25:05:255 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 40.460 ms[39m
+[35m[39m
+2023-10-01 18:25:10:2510 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.321 ms[39m
+[35m[39m
+2023-10-01 18:25:20:2520 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.345 ms[39m
+[35m[39m
+2023-10-01 18:25:30:2530 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.320 ms[39m
+[35m[39m
+2023-10-01 18:25:40:2540 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.332 ms[39m
+[35m[39m
+2023-10-01 18:25:47:2547 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 40.242 ms[39m
+[35m[39m
+2023-10-01 18:25:47:2547 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 39.386 ms[39m
+[35m[39m
+2023-10-01 18:25:50:2550 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.334 ms[39m
+[35m[39m
+2023-10-01 18:26:00:260 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.348 ms[39m
+[35m[39m
+2023-10-01 18:26:10:2610 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.483 ms[39m
+[35m[39m
+2023-10-01 18:26:20:2620 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.312 ms[39m
+[35m[39m
+2023-10-01 18:26:30:2630 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.365 ms[39m
+[35m[39m
+2023-10-01 18:26:40:2640 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.317 ms[39m
+[35m[39m
+2023-10-01 18:26:50:2650 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.479 ms[39m
+[35m[39m
+2023-10-01 18:27:30:2730 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.462 ms[39m
+[35m[39m
+2023-10-01 18:27:40:2740 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.322 ms[39m
+[35m[39m
+2023-10-01 18:27:50:2750 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.414 ms[39m
+[35m[39m
+2023-10-01 18:28:00:280 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.445 ms[39m
+[35m[39m
+2023-10-01 18:28:10:2810 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.418 ms[39m
+[35m[39m
+2023-10-01 18:28:13:2813 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 47.582 ms[39m
+[35m[39m
+2023-10-01 18:28:13:2813 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 48.130 ms[39m
+[35m[39m
+2023-10-01 18:28:20:2820 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.357 ms[39m
+[35m[39m
+2023-10-01 18:28:30:2830 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.320 ms[39m
+[35m[39m
+2023-10-01 18:28:33:2833 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 42.541 ms[39m
+[35m[39m
+2023-10-01 18:28:33:2833 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 39.644 ms[39m
+[35m[39m
+2023-10-01 18:28:40:2840 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.399 ms[39m
+[35m[39m
+2023-10-01 18:28:50:2850 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.404 ms[39m
+[35m[39m
+2023-10-01 18:29:00:290 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.340 ms[39m
+[35m[39m
+2023-10-01 18:29:10:2910 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.380 ms[39m
+[35m[39m
+2023-10-01 18:29:20:2920 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.989 ms[39m
+[35m[39m
+2023-10-01 18:29:30:2930 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.378 ms[39m
+[35m[39m
+2023-10-01 18:29:40:2940 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.425 ms[39m
+[35m[39m
+2023-10-01 18:29:50:2950 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.392 ms[39m
+[35m[39m
+2023-10-01 18:30:50:3050 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.370 ms[39m
+[35m[39m
+2023-10-01 18:31:50:3150 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.392 ms[39m
+[35m[39m
+2023-10-01 18:32:50:3250 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.364 ms[39m
+[35m[39m
+2023-10-01 18:33:50:3350 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.457 ms[39m
+[35m[39m
+2023-10-01 18:34:00:340 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.402 ms[39m
+[35m[39m
+2023-10-01 18:34:10:3410 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.098 ms[39m
+[35m[39m
+2023-10-01 18:34:20:3420 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.327 ms[39m
+[35m[39m
+2023-10-01 18:34:30:3430 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.531 ms[39m
+[35m[39m
+2023-10-01 18:34:40:3440 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.585 ms[39m
+[35m[39m
+2023-10-01 18:34:50:3450 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.435 ms[39m
+[35m[39m
+2023-10-01 18:35:50:3550 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.340 ms[39m
+[35m[39m
+2023-10-01 18:36:50:3650 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.481 ms[39m
+[35m[39m
+2023-10-01 18:37:50:3750 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.465 ms[39m
+[35m[39m
+2023-10-01 18:38:00:380 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.375 ms[39m
+[35m[39m
+2023-10-01 18:38:10:3810 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.721 ms[39m
+[35m[39m
+2023-10-01 18:38:20:3820 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.473 ms[39m
+[35m[39m
+2023-10-01 18:38:30:3830 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.342 ms[39m
+[35m[39m
+2023-10-01 18:38:40:3840 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.345 ms[39m
+[35m[39m
+2023-10-01 18:38:50:3850 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.544 ms[39m
+[35m[39m
+2023-10-01 18:39:00:390 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.314 ms[39m
+[35m[39m
+2023-10-01 18:39:10:3910 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.496 ms[39m
+[35m[39m
+2023-10-01 18:54:19:5419 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:54:19:5419 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-01 18:54:19:5419 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:54:19:5419 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:54:19:5419 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-01 18:54:19:5419 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:56:04:564 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:56:04:564 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-01 18:56:04:564 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:56:04:564 [32minfo[39m: [32m=========================================[39m
+2023-10-01 18:56:04:564 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-01 18:56:04:564 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:15:42:1542 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:15:42:1542 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-01 19:15:42:1542 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:15:42:1542 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:15:42:1542 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-01 19:15:42:1542 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:17:15:1715 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:17:15:1715 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-01 19:17:15:1715 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:17:15:1715 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:17:15:1715 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-01 19:17:15:1715 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:17:54:1754 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 73.238 ms[39m
+[35m[39m
+2023-10-01 19:17:54:1754 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 80.302 ms[39m
+[35m[39m
+2023-10-01 19:18:00:180 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 3.441 ms[39m
+[35m[39m
+2023-10-01 19:18:10:1810 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.209 ms[39m
+[35m[39m
+2023-10-01 19:18:20:1820 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.979 ms[39m
+[35m[39m
+2023-10-01 19:18:30:1830 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.764 ms[39m
+[35m[39m
+2023-10-01 19:18:40:1840 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.705 ms[39m
+[35m[39m
+2023-10-01 19:18:50:1850 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.950 ms[39m
+[35m[39m
+2023-10-01 19:18:58:1858 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 49.011 ms[39m
+[35m[39m
+2023-10-01 19:18:58:1858 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 50.064 ms[39m
+[35m[39m
+2023-10-01 19:19:00:190 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.855 ms[39m
+[35m[39m
+2023-10-01 19:19:10:1910 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.429 ms[39m
+[35m[39m
+2023-10-01 19:19:20:1920 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.920 ms[39m
+[35m[39m
+2023-10-01 19:19:30:1930 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.602 ms[39m
+[35m[39m
+2023-10-01 19:19:40:1940 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.879 ms[39m
+[35m[39m
+2023-10-01 19:19:42:1942 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 66.424 ms[39m
+[35m[39m
+2023-10-01 19:19:42:1942 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 66.942 ms[39m
+[35m[39m
+2023-10-01 19:19:43:1943 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 39.545 ms[39m
+[35m[39m
+2023-10-01 19:19:43:1943 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 40.126 ms[39m
+[35m[39m
+2023-10-01 19:19:50:1950 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.799 ms[39m
+[35m[39m
+2023-10-01 19:19:51:1951 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 44.446 ms[39m
+[35m[39m
+2023-10-01 19:19:51:1951 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 45.531 ms[39m
+[35m[39m
+2023-10-01 19:20:00:200 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.650 ms[39m
+[35m[39m
+2023-10-01 19:20:08:208 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 54.837 ms[39m
+[35m[39m
+2023-10-01 19:20:08:208 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 54.921 ms[39m
+[35m[39m
+2023-10-01 19:20:10:2010 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.689 ms[39m
+[35m[39m
+2023-10-01 19:20:18:2018 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 52.311 ms[39m
+[35m[39m
+2023-10-01 19:20:18:2018 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 52.930 ms[39m
+[35m[39m
+2023-10-01 19:20:20:2020 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.040 ms[39m
+[35m[39m
+2023-10-01 19:20:30:2030 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.938 ms[39m
+[35m[39m
+2023-10-01 19:20:36:2036 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 50.527 ms[39m
+[35m[39m
+2023-10-01 19:20:36:2036 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 51.709 ms[39m
+[35m[39m
+2023-10-01 19:20:40:2040 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.373 ms[39m
+[35m[39m
+2023-10-01 19:20:50:2050 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.737 ms[39m
+[35m[39m
+2023-10-01 19:21:00:210 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.714 ms[39m
+[35m[39m
+2023-10-01 19:21:10:2110 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.862 ms[39m
+[35m[39m
+2023-10-01 19:21:20:2120 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.914 ms[39m
+[35m[39m
+2023-10-01 19:21:30:2130 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.491 ms[39m
+[35m[39m
+2023-10-01 19:21:40:2140 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.591 ms[39m
+[35m[39m
+2023-10-01 19:21:50:2150 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.703 ms[39m
+[35m[39m
+2023-10-01 19:22:00:220 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.649 ms[39m
+[35m[39m
+2023-10-01 19:22:10:2210 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.562 ms[39m
+[35m[39m
+2023-10-01 19:22:20:2220 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.725 ms[39m
+[35m[39m
+2023-10-01 19:22:30:2230 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.590 ms[39m
+[35m[39m
+2023-10-01 19:22:40:2240 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.712 ms[39m
+[35m[39m
+2023-10-01 19:22:50:2250 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.028 ms[39m
+[35m[39m
+2023-10-01 19:23:00:230 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.720 ms[39m
+[35m[39m
+2023-10-01 19:23:03:233 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 200 752 - 43.648 ms[39m
+[35m[39m
+2023-10-01 19:23:03:233 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 40.827 ms[39m
+[35m[39m
+2023-10-01 19:23:03:233 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 46.211 ms[39m
+[35m[39m
+2023-10-01 19:23:03:233 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 43.208 ms[39m
+[35m[39m
+2023-10-01 19:23:11:2311 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 42.038 ms[39m
+[35m[39m
+2023-10-01 19:23:11:2311 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 41.715 ms[39m
+[35m[39m
+2023-10-01 19:23:11:2311 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 42.174 ms[39m
+[35m[39m
+2023-10-01 19:23:11:2311 [35mhttp[39m: [35mPOST /api/signup/0x659664dd23937edee4f19391A5C355FdbD4c93e6 400 31 - 43.647 ms[39m
+[35m[39m
+2023-10-01 19:23:14:2314 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 44.094 ms[39m
+[35m[39m
+2023-10-01 19:23:14:2314 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.634 ms[39m
+[35m[39m
+2023-10-01 19:23:14:2314 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 49.429 ms[39m
+[35m[39m
+2023-10-01 19:23:14:2314 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.251 ms[39m
+[35m[39m
+2023-10-01 19:23:20:2320 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.555 ms[39m
+[35m[39m
+2023-10-01 19:23:30:2330 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.556 ms[39m
+[35m[39m
+2023-10-01 19:23:40:2340 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.539 ms[39m
+[35m[39m
+2023-10-01 19:23:50:2350 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.624 ms[39m
+[35m[39m
+2023-10-01 19:24:00:240 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.640 ms[39m
+[35m[39m
+2023-10-01 19:24:10:2410 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.572 ms[39m
+[35m[39m
+2023-10-01 19:24:20:2420 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.589 ms[39m
+[35m[39m
+2023-10-01 19:24:30:2430 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.560 ms[39m
+[35m[39m
+2023-10-01 19:24:40:2440 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.632 ms[39m
+[35m[39m
+2023-10-01 19:24:50:2450 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.618 ms[39m
+[35m[39m
+2023-10-01 19:25:50:2550 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.134 ms[39m
+[35m[39m
+2023-10-01 19:26:09:269 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.387 ms[39m
+[35m[39m
+2023-10-01 19:26:09:269 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 43.484 ms[39m
+[35m[39m
+2023-10-01 19:26:10:2610 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.887 ms[39m
+[35m[39m
+2023-10-01 19:26:20:2620 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.662 ms[39m
+[35m[39m
+2023-10-01 19:26:26:2626 [35mhttp[39m: [35mPATCH /api/referral/0x659664dd23937edee4f19391A5C355FdbD4c93e6 201 756 - 108.835 ms[39m
+[35m[39m
+2023-10-01 19:26:30:2630 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.582 ms[39m
+[35m[39m
+2023-10-01 19:26:40:2640 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.573 ms[39m
+[35m[39m
+2023-10-01 19:26:50:2650 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.529 ms[39m
+[35m[39m
+2023-10-01 19:26:57:2657 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 200 756 - 41.098 ms[39m
+[35m[39m
+2023-10-01 19:26:57:2657 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 42.116 ms[39m
+[35m[39m
+2023-10-01 19:27:00:270 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.324 ms[39m
+[35m[39m
+2023-10-01 19:27:10:2710 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.545 ms[39m
+[35m[39m
+2023-10-01 19:27:20:2720 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.503 ms[39m
+[35m[39m
+2023-10-01 19:27:30:2730 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.458 ms[39m
+[35m[39m
+2023-10-01 19:27:40:2740 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.580 ms[39m
+[35m[39m
+2023-10-01 19:27:50:2750 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.465 ms[39m
+[35m[39m
+2023-10-01 19:28:05:285 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.798 ms[39m
+[35m[39m
+2023-10-01 19:28:07:287 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 52.727 ms[39m
+[35m[39m
+2023-10-01 19:28:07:287 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 44.031 ms[39m
+[35m[39m
+2023-10-01 19:28:10:2810 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.695 ms[39m
+[35m[39m
+2023-10-01 19:28:20:2820 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.040 ms[39m
+[35m[39m
+2023-10-01 19:28:26:2826 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 44.346 ms[39m
+[35m[39m
+2023-10-01 19:28:26:2826 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 43.227 ms[39m
+[35m[39m
+2023-10-01 19:28:30:2830 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.580 ms[39m
+[35m[39m
+2023-10-01 19:28:39:2839 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.809 ms[39m
+[35m[39m
+2023-10-01 19:28:39:2839 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 40.965 ms[39m
+[35m[39m
+2023-10-01 19:28:40:2840 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.696 ms[39m
+[35m[39m
+2023-10-01 19:28:50:2850 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.546 ms[39m
+[35m[39m
+2023-10-01 19:29:00:290 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.461 ms[39m
+[35m[39m
+2023-10-01 19:29:01:291 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 46.472 ms[39m
+[35m[39m
+2023-10-01 19:29:01:291 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 41.155 ms[39m
+[35m[39m
+2023-10-01 19:29:09:299 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 52.393 ms[39m
+[35m[39m
+2023-10-01 19:29:09:299 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 56.928 ms[39m
+[35m[39m
+2023-10-01 19:29:10:2910 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.571 ms[39m
+[35m[39m
+2023-10-01 19:29:20:2920 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.602 ms[39m
+[35m[39m
+2023-10-01 19:29:30:2930 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.740 ms[39m
+[35m[39m
+2023-10-01 19:29:40:2940 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.528 ms[39m
+[35m[39m
+2023-10-01 19:29:40:2940 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 45.294 ms[39m
+[35m[39m
+2023-10-01 19:29:40:2940 [35mhttp[39m: [35mGET /api/get/0x659664dd23937edee4f19391A5C355FdbD4c93e6 304 - - 45.343 ms[39m
+[35m[39m
+2023-10-01 19:29:50:2950 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.770 ms[39m
+[35m[39m
+2023-10-01 19:30:00:300 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.601 ms[39m
+[35m[39m
+2023-10-01 19:30:10:3010 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.570 ms[39m
+[35m[39m
+2023-10-01 19:30:20:3020 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.565 ms[39m
+[35m[39m
+2023-10-01 19:30:30:3030 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.967 ms[39m
+[35m[39m
+2023-10-01 19:30:40:3040 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.929 ms[39m
+[35m[39m
+2023-10-01 19:30:50:3050 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.580 ms[39m
+[35m[39m
+2023-10-01 19:31:00:310 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.467 ms[39m
+[35m[39m
+2023-10-01 19:31:10:3110 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.560 ms[39m
+[35m[39m
+2023-10-01 19:31:23:3123 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:31:23:3123 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-01 19:31:23:3123 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:31:23:3123 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:31:23:3123 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-01 19:31:23:3123 [32minfo[39m: [32m=========================================[39m
+2023-10-01 19:31:30:3130 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 5.554 ms[39m
+[35m[39m
+2023-10-01 19:31:40:3140 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 2.459 ms[39m
+[35m[39m
