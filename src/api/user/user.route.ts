@@ -3,15 +3,30 @@
 import express, { Request, Response } from 'express';
 import { DFrameUser } from '../../models/user.model'; // Replace with the correct import path for your model
 
-const router = express.Router();
+import multer from 'multer';
+import path from 'path';
 import jwt, { Secret } from 'jsonwebtoken';
 
 import 'dotenv/config';
+const router = express.Router();
 const jwtSecret: Secret | undefined = process.env.JWT_SECRET || 'defaultSecret';
 console.log(jwtSecret);
 if (!jwtSecret) {
   throw new Error('JWT_SECRET is not defined in the environment variables');
 }
+
+// Define storage for uploaded images using multer
+const storage = multer.diskStorage({
+  destination: './uploads/',
+  filename: (req, file, cb) => {
+    const filename = `${Date.now()}${path.extname(file.originalname)}`;
+    cb(null, filename);
+  },
+});
+
+// Initialize multer with the defined storage
+const upload = multer({ storage });
+
 // POST /api/signup/:publicAddress
 router.post(
   '/api/signup/:publicAddress',
@@ -139,5 +154,39 @@ router.delete('/api/delete/all', async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+// PATCH /api/update-address/:publicAddress - Update address1 and address2 for a user
+router.patch(
+  '/api/update-address/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+    const { address1, address2 } = req.body;
+
+    try {
+      // Find the user by their publicAddress
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Update the address1 and address2 fields with the provided data
+      if (address1) {
+        (user.address1 as any).data = address1;
+      }
+      if (address2) {
+        (user.address2 as any).data = address2;
+      }
+
+      // Save the updated user
+      await user.save();
+
+      res.status(200).json({ message: 'Address updated successfully' });
+    } catch (error) {
+      console.error('Error updating address:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
 
 export { router as UserRouter };

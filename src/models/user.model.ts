@@ -16,13 +16,6 @@ interface KYC2Details {
   permanentAddress?: string;
 }
 
-// Define the KYC3Details interface
-interface KYC3Details {
-  photoUrl?: string;
-  governmentId1Url?: string;
-  governmentId2Url?: string;
-}
-
 interface DFrameUserAttrs {
   publicAddress: string;
   firstName?: string;
@@ -32,20 +25,16 @@ interface DFrameUserAttrs {
   email?: string;
   earnings?: string;
   profileImage?: string;
-  address1?: [
-    {
-      data?: string;
-      image?: string;
-      verified?: boolean;
-    }
-  ];
-  address2?: [
-    {
-      data?: string;
-      image?: string;
-      verified?: boolean;
-    }
-  ];
+  address1?: {
+    data?: string;
+    image?: string;
+    verified?: boolean;
+  };
+  address2?: {
+    data?: string;
+    image?: string;
+    verified?: boolean;
+  };
   userData?: {
     dataDate: string;
     urlData: {
@@ -74,7 +63,6 @@ interface DFrameUserAttrs {
   kyc3?: {
     status?: boolean;
     verified?: boolean;
-    details?: KYC3Details;
   };
 }
 
@@ -87,20 +75,16 @@ interface DFrameUserDoc extends mongoose.Document {
   email?: string;
   earnings?: string;
   profileImage?: string;
-  address1?: [
-    {
-      data?: string;
-      image?: string;
-      verified?: boolean;
-    }
-  ];
-  address2?: [
-    {
-      data?: string;
-      image?: string;
-      verified?: boolean;
-    }
-  ];
+  address1?: {
+    data?: string;
+    submitted?: true;
+    verified?: boolean;
+  };
+  address2?: {
+    data?: string;
+    submitted?: true;
+    verified?: boolean;
+  };
   userData?: {
     dataDate: string;
     urlData: {
@@ -129,7 +113,6 @@ interface DFrameUserDoc extends mongoose.Document {
   kyc3?: {
     status?: boolean;
     verified?: boolean;
-    details?: KYC3Details;
   };
 }
 
@@ -143,20 +126,16 @@ const dFrameUserSchema = new mongoose.Schema(
     email: { type: String, default: '' },
     earnings: { type: String, default: '' },
     profileImage: { type: String, default: '' },
-    address1: [
-      {
-        data: { type: String, default: '' },
-        image: { type: String, default: '' },
-        verified: { type: Boolean, default: false },
-      },
-    ],
-    address2: [
-      {
-        data: { type: String, default: '' },
-        image: { type: String, default: '' },
-        verified: { type: Boolean, default: false },
-      },
-    ],
+    address1: {
+      data: { type: String, default: '' },
+      image: { type: String, default: '' },
+      verified: { type: Boolean, default: false },
+    },
+    address2: {
+      data: { type: String, default: '' },
+      image: { type: String, default: '' },
+      verified: { type: Boolean, default: false },
+    },
     userData: [
       {
         dataDate: String,
@@ -200,11 +179,6 @@ const dFrameUserSchema = new mongoose.Schema(
     kyc3: {
       status: { type: Boolean, default: false },
       verified: { type: Boolean, default: false },
-      details: {
-        photoUrl: { type: String, default: '' },
-        governmentId1Url: { type: String, default: '' },
-        governmentId2Url: { type: String, default: '' },
-      },
     },
   },
   {
