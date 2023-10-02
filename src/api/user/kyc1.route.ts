@@ -25,6 +25,7 @@ router.patch(
       user.kyc1.details.phoneNumber = phoneNumber;
       user.kyc1.details.email = email;
       user.kyc1.details.userName = userName;
+      user.kyc1.status = true;
 
       // Update user model fields
       user.userName = userName;

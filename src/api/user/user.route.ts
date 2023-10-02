@@ -4,7 +4,14 @@ import express, { Request, Response } from 'express';
 import { DFrameUser } from '../../models/user.model'; // Replace with the correct import path for your model
 
 const router = express.Router();
+import jwt, { Secret } from 'jsonwebtoken';
 
+import 'dotenv/config';
+const jwtSecret: Secret | undefined = process.env.JWT_SECRET || 'defaultSecret';
+console.log(jwtSecret);
+if (!jwtSecret) {
+  throw new Error('JWT_SECRET is not defined in the environment variables');
+}
 // POST /api/signup/:publicAddress
 router.post(
   '/api/signup/:publicAddress',
@@ -47,7 +54,14 @@ router.get('/api/get/:publicAddress', async (req: Request, res: Response) => {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    res.status(200).json(user);
+    const expiresIn = 30 * 24 * 60 * 60; // 30 days * 24 hours * 60 minutes * 60 seconds
+
+    // Generate a JWT token with a 30-day expiration
+    const token = jwt.sign({ userId: user._id }, jwtSecret, {
+      expiresIn,
+    });
+
+    res.status(200).json({ user, token });
   } catch (error) {
     console.error('Error fetching user:', error);
     res.status(500).json({ error: 'Internal server error' });

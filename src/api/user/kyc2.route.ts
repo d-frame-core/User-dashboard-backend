@@ -44,6 +44,7 @@ router.patch(
       user.kyc2.details.dob = dob;
       user.kyc2.details.annualIncome = annualIncome;
       user.kyc2.details.permanentAddress = permanentAddress;
+      user.kyc2.status = true;
 
       // Save the updated user
       await user.save();
