@@ -2,43 +2,34 @@
 
 import mongoose, { Schema, Document } from 'mongoose';
 
-// Define the interface for the Address document
-interface AddressDoc extends Document {
-  publicAddress: string;
-  addressProof1: {
-    data: Buffer;
-    contentType: string;
-  };
-  addressProof2: {
-    data: Buffer;
-    contentType: string;
-  };
+// Define the interface for a single image
+interface Image {
+  data: Buffer;
+  contentType: string;
 }
 
-// Define the schema for the Address model
-const addressSchema: Schema<AddressDoc> = new Schema({
+// Define the interface for the Profile document
+export interface AddressDocument extends Document {
+  images: Image[];
+  publicAddress: string;
+}
+
+// Define the schema for the Profile model
+const addressImagesSchema = new Schema<AddressDocument>({
+  images: [
+    {
+      data: Buffer,
+      contentType: String,
+    },
+  ],
   publicAddress: {
     type: String,
     required: true,
-    unique: true,
-  },
-  addressProof1: {
-    data: Buffer,
-    contentType: {
-      type: String,
-      enum: ['image/jpeg', 'image/png'], // Specify allowed image types
-      required: true,
-    },
-  },
-  addressProof2: {
-    data: Buffer,
-    contentType: {
-      type: String,
-      enum: ['image/jpeg', 'image/png'], // Specify allowed image types
-      required: true,
-    },
   },
 });
 
-// Create and export the Address model
-export const Address = mongoose.model<AddressDoc>('Address', addressSchema);
+// Create and export the Profile model
+export const AddressProof = mongoose.model<AddressDocument>(
+  'AddressProof',
+  addressImagesSchema
+);

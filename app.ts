@@ -16,6 +16,7 @@ import { KYC2Router } from './src/api/user/kyc2.route';
 import { KYC3Router } from './src/api/user/kyc3.route';
 import { UserDataRouter } from './src/api/user/user.data.route';
 import { AddressRouter } from './src/api/user/address.route';
+import { ProfileImageRouter } from './src/api/user/image.route';
 const cors = require('cors');
 const app = express();
 const corsOptions = {
@@ -70,6 +71,7 @@ app.use(KYC2Router);
 app.use(KYC3Router);
 app.use(UserDataRouter);
 app.use(AddressRouter);
+app.use(ProfileImageRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();

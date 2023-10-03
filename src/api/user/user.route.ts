@@ -173,9 +173,11 @@ router.patch(
       // Update the address1 and address2 fields with the provided data
       if (address1) {
         (user.address1 as any).data = address1;
+        (user.address1 as any).submitted = true;
       }
       if (address2) {
         (user.address2 as any).data = address2;
+        (user.address2 as any).submitted = true;
       }
 
       // Save the updated user

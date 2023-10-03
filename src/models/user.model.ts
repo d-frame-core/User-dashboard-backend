@@ -27,12 +27,12 @@ interface DFrameUserAttrs {
   profileImage?: string;
   address1?: {
     data?: string;
-    image?: string;
+    submitted?: boolean;
     verified?: boolean;
   };
   address2?: {
     data?: string;
-    image?: string;
+    submitted?: boolean;
     verified?: boolean;
   };
   userData?: {
@@ -77,12 +77,12 @@ interface DFrameUserDoc extends mongoose.Document {
   profileImage?: string;
   address1?: {
     data?: string;
-    submitted?: true;
+    submitted?: boolean;
     verified?: boolean;
   };
   address2?: {
     data?: string;
-    submitted?: true;
+    submitted?: boolean;
     verified?: boolean;
   };
   userData?: {
@@ -128,12 +128,12 @@ const dFrameUserSchema = new mongoose.Schema(
     profileImage: { type: String, default: '' },
     address1: {
       data: { type: String, default: '' },
-      image: { type: String, default: '' },
+      submitted: { type: Boolean, default: false },
       verified: { type: Boolean, default: false },
     },
     address2: {
       data: { type: String, default: '' },
-      image: { type: String, default: '' },
+      submitted: { type: Boolean, default: false },
       verified: { type: Boolean, default: false },
     },
     userData: [
