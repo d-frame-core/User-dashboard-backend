@@ -17651,3 +17651,69 @@
 [35m[39m
 2023-10-03 20:05:50:550 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.574 ms[39m
 [35m[39m
+2023-10-03 20:07:41:741 [32minfo[39m: [32m=========================================[39m
+2023-10-03 20:07:41:741 [32minfo[39m: [32m[INFO]:  ✌️ DB loaded and connected! ✌️[39m
+2023-10-03 20:07:41:741 [32minfo[39m: [32m=========================================[39m
+2023-10-03 20:07:41:741 [32minfo[39m: [32m=========================================[39m
+2023-10-03 20:07:41:741 [32minfo[39m: [32m[INFO]:   ✌️ App Started ✌️[39m
+2023-10-03 20:07:41:741 [32minfo[39m: [32m=========================================[39m
+2023-10-03 20:07:41:741 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 6.436 ms[39m
+[35m[39m
+2023-10-03 20:07:50:750 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 2.172 ms[39m
+[35m[39m
+2023-10-03 20:08:00:80 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.660 ms[39m
+[35m[39m
+2023-10-03 20:08:10:810 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.870 ms[39m
+[35m[39m
+2023-10-03 20:08:20:820 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.702 ms[39m
+[35m[39m
+2023-10-03 20:08:30:830 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.987 ms[39m
+[35m[39m
+2023-10-03 20:09:36:936 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.976 ms[39m
+[35m[39m
+2023-10-03 20:10:36:1036 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.194 ms[39m
+[35m[39m
+2023-10-03 20:11:36:1136 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.069 ms[39m
+[35m[39m
+2023-10-03 20:12:36:1236 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.977 ms[39m
+[35m[39m
+2023-10-03 20:13:36:1336 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.738 ms[39m
+[35m[39m
+2023-10-03 20:14:36:1436 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.976 ms[39m
+[35m[39m
+2023-10-03 20:15:36:1536 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.997 ms[39m
+[35m[39m
+2023-10-03 20:16:36:1636 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.667 ms[39m
+[35m[39m
+2023-10-03 20:17:36:1736 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.999 ms[39m
+[35m[39m
+2023-10-03 20:18:36:1836 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.699 ms[39m
+[35m[39m
+2023-10-03 20:19:36:1936 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.889 ms[39m
+[35m[39m
+2023-10-03 20:20:36:2036 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.614 ms[39m
+[35m[39m
+2023-10-03 20:21:36:2136 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.939 ms[39m
+[35m[39m
+2023-10-03 20:22:36:2236 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.444 ms[39m
+[35m[39m
+2023-10-03 20:23:36:2336 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.877 ms[39m
+[35m[39m
+2023-10-03 20:24:36:2436 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.925 ms[39m
+[35m[39m
+2023-10-03 20:25:36:2536 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.901 ms[39m
+[35m[39m
+2023-10-03 20:26:36:2636 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.898 ms[39m
+[35m[39m
+2023-10-03 20:27:36:2736 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.732 ms[39m
+[35m[39m
+2023-10-03 20:28:36:2836 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.744 ms[39m
+[35m[39m
+2023-10-03 20:29:36:2936 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 1.099 ms[39m
+[35m[39m
+2023-10-03 20:30:36:3036 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.905 ms[39m
+[35m[39m
+2023-10-03 20:31:36:3136 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.592 ms[39m
+[35m[39m
+2023-10-03 20:32:17:3217 [35mhttp[39m: [35mPOST /api/users/userdata 404 25 - 0.853 ms[39m
+[35m[39m
