@@ -70,6 +70,7 @@ router.post(
     }
   }
 );
+
 router.get('/api/user/:publicAddress', async (req: Request, res: Response) => {
   try {
     const publicAddress = req.params.publicAddress;
@@ -550,5 +551,38 @@ router.post(
     }
   }
 );
+
+router.get('/api/token/:publicAddress', async (req: Request, res: Response) => {
+  try {
+    const publicAddress = req.params.publicAddress;
+
+    // Find the user by public address in the database
+    const user = await DFrameUser.findOne({ publicAddress });
+
+    if (!user) {
+      // If the user doesn't exist, return null
+      return res.status(200).json({ token: null });
+    }
+
+    // Create and sign a JWT token with user information
+    const jwtPayload = {
+      userId: user.id, // You can include any user-related data here
+    };
+
+    const jwtSecret: string | undefined = process.env.JWT_SECRET;
+    if (!jwtSecret) {
+      throw new Error('JWT_SECRET is not defined in the environment variables');
+    }
+
+    // Sign the JWT token
+    const token = sign(jwtPayload, jwtSecret);
+
+    // Return the token
+    return res.status(200).json({ token });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
 export { router as UserRouter };
