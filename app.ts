@@ -66,12 +66,12 @@ app.use(UserRouter);
 app.use(LearnMoreRouter);
 app.use(HelpRouter);
 app.use(FaqRouter);
-app.use(KYC1Router);
-app.use(KYC2Router);
-app.use(KYC3Router);
-app.use(UserDataRouter);
-app.use(AddressRouter);
-app.use(ProfileImageRouter);
+// app.use(KYC1Router);
+// app.use(KYC2Router);
+// app.use(KYC3Router);
+// app.use(UserDataRouter);
+// app.use(AddressRouter);
+// app.use(ProfileImageRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();
