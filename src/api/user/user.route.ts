@@ -713,4 +713,81 @@ router.patch(
   }
 );
 
+// POST route to add user data as an array
+router.post('/api/userData/:publicAddress', async (req, res) => {
+  try {
+    const publicAddress = req.params.publicAddress;
+    const dataEntries = req.body; // Array of data entries
+
+    // Find the user by their publicAddress
+    let user = await DFrameUser.findOne({ publicAddress });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Convert timestamp to the desired format
+    const currentDate = new Date().toLocaleDateString('en-GB');
+
+    // Iterate through the array of data entries
+    for (const entry of dataEntries) {
+      const { urlLink, timestamp, tags } = entry;
+
+      // Convert timestamp to the desired format
+      const formattedTimestamp = new Date(timestamp).toLocaleTimeString(
+        'en-GB'
+      );
+
+      // Check if userData for the current date exists
+      let userDataForCurrentDate = user.userData?.find(
+        (data) => data.dataDate === currentDate
+      );
+
+      // If userData for the current date exists, check if the URL exists in urlLink
+      if (userDataForCurrentDate) {
+        const urlDataIndex = userDataForCurrentDate.urlData.findIndex((data) =>
+          data.urlLink.has(urlLink)
+        );
+
+        if (urlDataIndex !== -1) {
+          // If the URL exists, update the corresponding timestamps
+          userDataForCurrentDate.urlData[urlDataIndex].timestamps.push(
+            formattedTimestamp
+          );
+        } else {
+          // If the URL does not exist, create a new entry
+          userDataForCurrentDate.urlData.push({
+            urlLink: new Set([urlLink]),
+            timestamps: [formattedTimestamp],
+            tags: [new Set<string>(tags)],
+          });
+        }
+      } else {
+        // Create a new userData object for the current date
+        userDataForCurrentDate = {
+          dataDate: currentDate,
+          urlData: [
+            {
+              urlLink: new Set([urlLink]),
+              timestamps: [formattedTimestamp],
+              tags: [new Set<string>(tags)],
+            },
+          ],
+        };
+
+        // Push the new userData object to the user's userData array
+        (user.userData as any).push(userDataForCurrentDate);
+      }
+    }
+
+    // Save the updated user document
+    user = await user.save();
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+
+  res.json({ message: 'Data stored successfully' });
+});
+
 export { router as UserRouter };
