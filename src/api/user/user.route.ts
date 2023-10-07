@@ -585,4 +585,132 @@ router.get('/api/token/:publicAddress', async (req: Request, res: Response) => {
   }
 });
 
+// Function to check if the content type is valid
+function isValidContentType(contentType: string): boolean {
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+  return allowedTypes.includes(contentType);
+}
+// PATCH /api/kyc3/:publicAddress
+router.patch(
+  '/api/kyc3/:publicAddress',
+  upload.fields([
+    { name: 'governmentProof1', maxCount: 1 },
+    { name: 'governmentProof2', maxCount: 1 },
+    { name: 'userPhoto', maxCount: 1 },
+  ]),
+  async (req, res) => {
+    try {
+      const publicAddress = req.params.publicAddress;
+
+      // Find the user by public address
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      type UploadedFiles = { [fieldname: string]: Express.Multer.File[] };
+
+      // ...
+
+      // Inside your route handler
+      const uploadedFiles: UploadedFiles = req.files as UploadedFiles; // Annotate the type here
+
+      // Check if all three images were uploaded
+      const governmentProof1 = uploadedFiles['governmentProof1'][0];
+      const governmentProof2 = uploadedFiles['governmentProof2'][0];
+      const userPhoto = uploadedFiles['userPhoto'][0];
+
+      if (
+        !isValidContentType(governmentProof1.mimetype) ||
+        !isValidContentType(governmentProof2.mimetype) ||
+        !isValidContentType(userPhoto.mimetype)
+      ) {
+        return res.status(400).json({
+          error:
+            'Invalid file type. Supported types: image/jpeg, image/png, image/jpg',
+        });
+      }
+
+      // ...
+
+      if (!governmentProof1 || !governmentProof2 || !userPhoto) {
+        return res.status(400).json({ error: 'All three images are required' });
+      }
+
+      // Define the image paths for all three images
+      const imagePath1 = path.join(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'uploads',
+        'kyc3',
+        `${publicAddress}-governmentProof1${path.extname(
+          governmentProof1.originalname
+        )}`
+      );
+      const imagePath2 = path.join(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'uploads',
+        'kyc3',
+        `${publicAddress}-governmentProof2${path.extname(
+          governmentProof2.originalname
+        )}`
+      );
+      const imagePath3 = path.join(
+        __dirname,
+        '..',
+        '..',
+        '..',
+        'uploads',
+        'kyc3',
+        `${publicAddress}-userPhoto${path.extname(userPhoto.originalname)}`
+      );
+
+      // Check the values of variables used to construct file paths
+      console.log('imagePath1:', imagePath1);
+      console.log('imagePath2:', imagePath2);
+      console.log('imagePath3:', imagePath3);
+
+      // Rename and move the uploaded files
+      fs.renameSync(governmentProof1.path, imagePath1);
+      fs.renameSync(governmentProof2.path, imagePath2);
+      fs.renameSync(userPhoto.path, imagePath3);
+
+      // Update KYC information
+      user.kyc3 = {
+        status: true,
+        verified: false,
+        governmentProof1: {
+          data: fs.readFileSync(imagePath1),
+          contentType: (governmentProof1 as any).mimetype,
+        },
+        governmentProof2: {
+          data: fs.readFileSync(imagePath2),
+          contentType: (governmentProof2 as any).mimetype,
+        },
+        userPhoto: {
+          data: fs.readFileSync(imagePath3),
+          contentType: (userPhoto as any).mimetype,
+        },
+      };
+
+      // Save the updated user
+      await user.save();
+
+      console.log('KYC information updated successfully.');
+      return res
+        .status(200)
+        .json({ message: 'KYC information updated successfully' });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: 'Internal Server Error' });
+    }
+  }
+);
+
 export { router as UserRouter };

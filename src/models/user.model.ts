@@ -272,6 +272,14 @@ interface DFrameUserAttrs {
     storageOption: 'GCP' | 'IPFS';
   };
   profileImage?: Image; // New field for profile image
+  userData?: {
+    dataDate: string;
+    urlData: {
+      urlLink: Set<string>;
+      timestamps: string[]; // Change this to a regular array
+      tags: Set<string>[];
+    }[];
+  }[];
 }
 
 interface DFrameUserDoc extends mongoose.Document {
@@ -309,6 +317,14 @@ interface DFrameUserDoc extends mongoose.Document {
     storageOption: 'GCP' | 'IPFS';
   };
   profileImage?: Image; // New field for profile image
+  userData?: {
+    dataDate: string;
+    urlData: {
+      urlLink: Set<string>;
+      timestamps: string[]; // Change this to a regular array
+      tags: Set<string>[];
+    }[];
+  }[];
 }
 
 const dFrameUserSchema = new mongoose.Schema(
@@ -364,7 +380,20 @@ const dFrameUserSchema = new mongoose.Schema(
       storageOption: { type: String, enum: ['GCP', 'IPFS'], default: 'GCP' },
     },
     profileImage: { type: Object },
+    userData: [
+      {
+        dataDate: String,
+        urlData: [
+          {
+            urlLink: [String], // Change this to a regular array
+            timestamps: [String], // Change this to a regular array
+            tags: [String], // Change this to a regular array
+          },
+        ],
+      },
+    ],
   },
+
   {
     timestamps: true,
     toJSON: {
