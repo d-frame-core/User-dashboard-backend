@@ -1,7 +1,7 @@
 /** @format */
 
 import express, { Request, Response } from 'express';
-import { DFrameUser } from '../../models/user.model'; // Replace with the correct import path for your model
+import { DFrameUser, KYCStatus } from '../../models/user.model'; // Replace with the correct import path for your model
 
 import path from 'path';
 import fs from 'fs';
@@ -182,8 +182,7 @@ router.patch(
       user.kyc1.details.email = email;
 
       // Update KYC1 status to true
-      user.kyc1.status = true;
-      user.kyc1.verified = false;
+      user.kyc1.status = KYCStatus.Unverified;
 
       // Save the updated user
       await user.save();
@@ -242,8 +241,7 @@ router.patch(
       user.kyc2.details.permanentAddress = permanentAddress;
 
       // Update KYC2 status to true
-      user.kyc2.status = true;
-      user.kyc2.verified = false;
+      user.kyc2.status = KYCStatus.Unverified;
 
       // Save the updated user
       await user.save();
@@ -519,7 +517,6 @@ router.post(
           user.address = {
             data: req.body.data || '',
             submitted: true,
-            verified: false,
             addressProof: {
               data,
               contentType: (req.file as any).mimetype,
@@ -683,8 +680,7 @@ router.patch(
 
       // Update KYC information
       user.kyc3 = {
-        status: true,
-        verified: false,
+        status: KYCStatus.Unverified, // Set status to 'unverified' as a string,
         governmentProof1: {
           data: fs.readFileSync(imagePath1),
           contentType: (governmentProof1 as any).mimetype,

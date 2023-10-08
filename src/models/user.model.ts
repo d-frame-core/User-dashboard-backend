@@ -1,7 +1,5 @@
 /** @format */
 
-/** @format */
-
 // import mongoose from 'mongoose';
 
 // // Define the KYC2Details interface
@@ -18,34 +16,30 @@
 //   permanentAddress?: string;
 // }
 
+// // Define the Image interface for images
+// interface Image {
+//   data: Buffer;
+//   contentType: 'image/jpeg' | 'image/png' | 'image/jpg';
+// }
+
+// // Define the KYC3Details interface
+// interface KYC3Details {
+//   status?: boolean;
+//   verified?: boolean;
+//   governmentProof1?: Image;
+//   governmentProof2?: Image;
+//   userPhoto?: Image;
+// }
+
 // interface DFrameUserAttrs {
 //   publicAddress: string;
-//   firstName?: string;
-//   lastName?: string;
-//   userName?: string;
-//   phoneNumber?: string;
-//   email?: string;
-//   earnings?: string;
-//   profileImage?: string;
-//   address1?: {
+//   address?: {
 //     data?: string;
 //     submitted?: boolean;
 //     verified?: boolean;
+//     addressProof?: Image;
 //   };
-//   address2?: {
-//     data?: string;
-//     submitted?: boolean;
-//     verified?: boolean;
-//   };
-//   userData?: {
-//     dataDate: string;
-//     urlData: {
-//       urlLink: string;
-//       timestamps: string[];
-//       tags: string[];
-//     }[];
-//   }[];
-//   referrals?: string;
+//   referralCode?: string;
 //   kyc1?: {
 //     status?: boolean;
 //     verified?: boolean;
@@ -62,40 +56,35 @@
 //     verified?: boolean;
 //     details?: KYC2Details;
 //   };
-//   kyc3?: {
-//     status?: boolean;
-//     verified?: boolean;
+//   kyc3?: KYC3Details; // Updated KYC3 interface
+//   permissions?: {
+//     location: boolean;
+//     cookies: boolean;
+//     callDataSharing: boolean;
+//     emailSharing: boolean;
+//     notification: boolean;
+//     storageOption: 'GCP' | 'IPFS';
 //   };
+//   profileImage?: Image; // New field for profile image
+//   userData?: {
+//     dataDate: string;
+//     urlData: {
+//       urlLink: Set<string>;
+//       timestamps: string[]; // Change this to a regular array
+//       tags: Set<string>[];
+//     }[];
+//   }[];
 // }
 
 // interface DFrameUserDoc extends mongoose.Document {
 //   publicAddress: string;
-//   firstName?: string;
-//   lastName?: string;
-//   userName?: string;
-//   phoneNumber?: string;
-//   email?: string;
-//   earnings?: string;
-//   profileImage?: string;
-//   address1?: {
+//   address?: {
 //     data?: string;
 //     submitted?: boolean;
 //     verified?: boolean;
+//     addressProof?: Image;
 //   };
-//   address2?: {
-//     data?: string;
-//     submitted?: boolean;
-//     verified?: boolean;
-//   };
-//   userData?: {
-//     dataDate: string;
-//     urlData: {
-//       urlLink: string;
-//       timestamps: string[];
-//       tags: string[];
-//     }[];
-//   }[];
-//   referrals?: string;
+//   referralCode?: string;
 //   kyc1?: {
 //     status?: boolean;
 //     verified?: boolean;
@@ -112,45 +101,36 @@
 //     verified?: boolean;
 //     details?: KYC2Details;
 //   };
-//   kyc3?: {
-//     status?: boolean;
-//     verified?: boolean;
+//   kyc3?: KYC3Details; // Updated KYC3 interface
+//   permissions?: {
+//     location: boolean;
+//     cookies: boolean;
+//     callDataSharing: boolean;
+//     emailSharing: boolean;
+//     notification: boolean;
+//     storageOption: 'GCP' | 'IPFS';
 //   };
+//   profileImage?: Image; // New field for profile image
+//   userData?: {
+//     dataDate: string;
+//     urlData: {
+//       urlLink: Set<string>;
+//       timestamps: string[]; // Change this to a regular array
+//       tags: Set<string>[];
+//     }[];
+//   }[];
 // }
 
 // const dFrameUserSchema = new mongoose.Schema(
 //   {
 //     publicAddress: { type: String, required: true, unique: true },
-//     firstName: { type: String, default: '' },
-//     lastName: { type: String, default: '' },
-//     userName: { type: String, default: '' },
-//     phoneNumber: { type: String, default: '' },
-//     email: { type: String, default: '' },
-//     earnings: { type: String, default: '' },
-//     profileImage: { type: String, default: '' },
-//     address1: {
+//     address: {
 //       data: { type: String, default: '' },
 //       submitted: { type: Boolean, default: false },
 //       verified: { type: Boolean, default: false },
+//       addressProof: { type: Object },
 //     },
-//     address2: {
-//       data: { type: String, default: '' },
-//       submitted: { type: Boolean, default: false },
-//       verified: { type: Boolean, default: false },
-//     },
-//     userData: [
-//       {
-//         dataDate: String,
-//         urlData: [
-//           {
-//             urlLink: String,
-//             timestamps: [String],
-//             tags: [String],
-//           },
-//         ],
-//       },
-//     ],
-//     referrals: { type: String, default: '' },
+//     referralCode: { type: String, default: '' },
 //     kyc1: {
 //       status: { type: Boolean, default: false },
 //       verified: { type: Boolean, default: false },
@@ -181,8 +161,33 @@
 //     kyc3: {
 //       status: { type: Boolean, default: false },
 //       verified: { type: Boolean, default: false },
+//       governmentProof1: { type: Object }, // New governmentProof1 field
+//       governmentProof2: { type: Object }, // New governmentProof2 field
+//       userPhoto: { type: Object }, // New userPhoto field
 //     },
+//     permissions: {
+//       location: { type: Boolean, default: true },
+//       cookies: { type: Boolean, default: true },
+//       callDataSharing: { type: Boolean, default: true },
+//       emailSharing: { type: Boolean, default: true },
+//       notification: { type: Boolean, default: true },
+//       storageOption: { type: String, enum: ['GCP', 'IPFS'], default: 'GCP' },
+//     },
+//     profileImage: { type: Object },
+//     userData: [
+//       {
+//         dataDate: String,
+//         urlData: [
+//           {
+//             urlLink: [String], // Change this to a regular array
+//             timestamps: [String], // Change this to a regular array
+//             tags: [String], // Change this to a regular array
+//           },
+//         ],
+//       },
+//     ],
 //   },
+
 //   {
 //     timestamps: true,
 //     toJSON: {
@@ -208,7 +213,9 @@
 
 import mongoose from 'mongoose';
 
-// Define the KYC2Details interface
+// Define interfaces for data structures
+
+// KYC2Details interface
 interface KYC2Details {
   gender?: string;
   country?: string;
@@ -222,33 +229,39 @@ interface KYC2Details {
   permanentAddress?: string;
 }
 
-// Define the Image interface for images
+// Image interface for storing image data
 interface Image {
   data: Buffer;
   contentType: 'image/jpeg' | 'image/png' | 'image/jpg';
 }
 
-// Define the KYC3Details interface
-interface KYC3Details {
-  status?: boolean;
-  verified?: boolean;
-  governmentProof1?: Image;
-  governmentProof2?: Image;
-  userPhoto?: Image;
+// Define a string enum for KYC statuses
+enum KYCStatus {
+  Unsubmitted = 'unsubmitted',
+  Unverified = 'unverified',
+  Verified = 'verified',
+  Stop = 'stop',
+  Resubmit = 'resubmit',
+  Resubmitted = 'resubmitted',
 }
 
+enum RewardCategory {
+  KYC1 = 'KYC1',
+  KYC2 = 'KYC2',
+  KYC3 = 'KYC3',
+  // Add other categories here as needed
+}
+// Updated DFrameUserAttrs interface
 interface DFrameUserAttrs {
   publicAddress: string;
   address?: {
     data?: string;
     submitted?: boolean;
-    verified?: boolean;
-    addressProof?: Image;
+    addressProof?: Image; // Address proof image
   };
   referralCode?: string;
   kyc1?: {
-    status?: boolean;
-    verified?: boolean;
+    status?: KYCStatus;
     details?: {
       firstName?: string;
       lastName?: string;
@@ -258,11 +271,15 @@ interface DFrameUserAttrs {
     };
   };
   kyc2?: {
-    status?: boolean;
-    verified?: boolean;
+    status?: KYCStatus;
     details?: KYC2Details;
   };
-  kyc3?: KYC3Details; // Updated KYC3 interface
+  kyc3?: {
+    status?: KYCStatus;
+    governmentProof1?: Image;
+    governmentProof2?: Image;
+    userPhoto?: Image;
+  };
   permissions?: {
     location: boolean;
     cookies: boolean;
@@ -271,7 +288,7 @@ interface DFrameUserAttrs {
     notification: boolean;
     storageOption: 'GCP' | 'IPFS';
   };
-  profileImage?: Image; // New field for profile image
+  profileImage?: Image;
   userData?: {
     dataDate: string;
     urlData: {
@@ -280,20 +297,45 @@ interface DFrameUserAttrs {
       tags: Set<string>[];
     }[];
   }[];
+  rewards?: {
+    verificationRewards?: {
+      reward: number;
+      timestamp: string[];
+      rewardCategory: RewardCategory[];
+    };
+    dailyRewards?: {
+      browserDataRewards: {
+        reward: number;
+        timestamp: string[];
+      };
+      emailDataRewards: {
+        reward: number;
+        timestamp: string[];
+      };
+      callDataRewards: {
+        reward: number;
+        timestamp: string[];
+      };
+      referralRewards: {
+        reward: number;
+        timestamp: string[];
+        referrals: string[];
+      };
+    };
+  };
 }
 
+// Updated DFrameUserDoc interface
 interface DFrameUserDoc extends mongoose.Document {
   publicAddress: string;
   address?: {
     data?: string;
     submitted?: boolean;
-    verified?: boolean;
     addressProof?: Image;
   };
   referralCode?: string;
   kyc1?: {
-    status?: boolean;
-    verified?: boolean;
+    status?: KYCStatus;
     details?: {
       firstName?: string;
       lastName?: string;
@@ -303,11 +345,15 @@ interface DFrameUserDoc extends mongoose.Document {
     };
   };
   kyc2?: {
-    status?: boolean;
-    verified?: boolean;
+    status?: KYCStatus;
     details?: KYC2Details;
   };
-  kyc3?: KYC3Details; // Updated KYC3 interface
+  kyc3?: {
+    status?: KYCStatus;
+    governmentProof1?: Image;
+    governmentProof2?: Image;
+    userPhoto?: Image;
+  };
   permissions?: {
     location: boolean;
     cookies: boolean;
@@ -316,7 +362,7 @@ interface DFrameUserDoc extends mongoose.Document {
     notification: boolean;
     storageOption: 'GCP' | 'IPFS';
   };
-  profileImage?: Image; // New field for profile image
+  profileImage?: Image;
   userData?: {
     dataDate: string;
     urlData: {
@@ -325,21 +371,50 @@ interface DFrameUserDoc extends mongoose.Document {
       tags: Set<string>[];
     }[];
   }[];
+  rewards?: {
+    verificationRewards?: {
+      reward: number;
+      timestamp: string[];
+      rewardCategory: RewardCategory[];
+    };
+    dailyRewards?: {
+      browserDataRewards: {
+        reward: number;
+        timestamp: string[];
+      };
+      emailDataRewards: {
+        reward: number;
+        timestamp: string[];
+      };
+      callDataRewards: {
+        reward: number;
+        timestamp: string[];
+      };
+      referralRewards: {
+        reward: number;
+        timestamp: string[];
+        referrals: string[];
+      };
+    };
+  };
 }
 
+// Define a mongoose schema for DFrameUser
 const dFrameUserSchema = new mongoose.Schema(
   {
     publicAddress: { type: String, required: true, unique: true },
     address: {
       data: { type: String, default: '' },
       submitted: { type: Boolean, default: false },
-      verified: { type: Boolean, default: false },
       addressProof: { type: Object },
     },
     referralCode: { type: String, default: '' },
     kyc1: {
-      status: { type: Boolean, default: false },
-      verified: { type: Boolean, default: false },
+      status: {
+        type: String,
+        enum: Object.values(KYCStatus),
+        default: KYCStatus.Unsubmitted,
+      },
       details: {
         firstName: { type: String, default: '' },
         lastName: { type: String, default: '' },
@@ -349,8 +424,11 @@ const dFrameUserSchema = new mongoose.Schema(
       },
     },
     kyc2: {
-      status: { type: Boolean, default: false },
-      verified: { type: Boolean, default: false },
+      status: {
+        type: String,
+        enum: Object.values(KYCStatus),
+        default: KYCStatus.Unsubmitted,
+      },
       details: {
         gender: { type: String, default: '' },
         country: { type: String, default: '' },
@@ -365,11 +443,14 @@ const dFrameUserSchema = new mongoose.Schema(
       },
     },
     kyc3: {
-      status: { type: Boolean, default: false },
-      verified: { type: Boolean, default: false },
-      governmentProof1: { type: Object }, // New governmentProof1 field
-      governmentProof2: { type: Object }, // New governmentProof2 field
-      userPhoto: { type: Object }, // New userPhoto field
+      status: {
+        type: String,
+        enum: Object.values(KYCStatus),
+        default: KYCStatus.Unsubmitted,
+      },
+      governmentProof1: { type: Object },
+      governmentProof2: { type: Object },
+      userPhoto: { type: Object },
     },
     permissions: {
       location: { type: Boolean, default: true },
@@ -392,6 +473,32 @@ const dFrameUserSchema = new mongoose.Schema(
         ],
       },
     ],
+    rewards: {
+      verificationRewards: {
+        reward: { type: Number },
+        timestamp: { type: [String] },
+        rewardCategory: { type: [String], enum: Object.values(RewardCategory) },
+      },
+      dailyRewards: {
+        browserDataRewards: {
+          reward: { type: Number },
+          timestamp: { type: [String] },
+        },
+        emailDataRewards: {
+          reward: { type: Number },
+          timestamp: { type: [String] },
+        },
+        callDataRewards: {
+          reward: { type: Number },
+          timestamp: { type: [String] },
+        },
+        referralRewards: {
+          reward: { type: Number },
+          timestamp: { type: [String] },
+          referrals: { type: [String] },
+        },
+      },
+    },
   },
 
   {
@@ -406,13 +513,15 @@ const dFrameUserSchema = new mongoose.Schema(
   }
 );
 
+// Static method to build a new DFrameUser document
 dFrameUserSchema.statics.build = (attrs: DFrameUserAttrs) => {
   return new DFrameUser(attrs);
 };
 
+// Create a mongoose model for DFrameUser
 const DFrameUser = mongoose.model<DFrameUserDoc>(
   'DFrameUser',
   dFrameUserSchema
 );
 
-export { DFrameUser };
+export { DFrameUser, KYCStatus };
