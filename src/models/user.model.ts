@@ -302,24 +302,29 @@ interface DFrameUserAttrs {
       reward: number;
       timestamp: string[];
       rewardCategory: RewardCategory[];
+      status: 'PAID' | 'UNPAID';
     };
     dailyRewards?: {
       browserDataRewards: {
         reward: number;
         timestamp: string[];
+        status: 'PAID' | 'UNPAID';
       };
       emailDataRewards: {
         reward: number;
         timestamp: string[];
+        status: 'PAID' | 'UNPAID';
       };
       callDataRewards: {
         reward: number;
         timestamp: string[];
+        status: 'PAID' | 'UNPAID';
       };
       referralRewards: {
         reward: number;
         timestamp: string[];
         referrals: string[];
+        status: 'PAID' | 'UNPAID';
       };
     };
   };
@@ -376,24 +381,29 @@ interface DFrameUserDoc extends mongoose.Document {
       reward: number;
       timestamp: string[];
       rewardCategory: RewardCategory[];
+      status: 'PAID' | 'UNPAID';
     };
     dailyRewards?: {
       browserDataRewards: {
         reward: number;
         timestamp: string[];
+        status: 'PAID' | 'UNPAID';
       };
       emailDataRewards: {
         reward: number;
         timestamp: string[];
+        status: 'PAID' | 'UNPAID';
       };
       callDataRewards: {
         reward: number;
         timestamp: string[];
+        status: 'PAID' | 'UNPAID';
       };
       referralRewards: {
         reward: number;
         timestamp: string[];
         referrals: string[];
+        status: 'PAID' | 'UNPAID';
       };
     };
   };
@@ -478,24 +488,29 @@ const dFrameUserSchema = new mongoose.Schema(
         reward: { type: Number },
         timestamp: { type: [String] },
         rewardCategory: { type: [String], enum: Object.values(RewardCategory) },
+        status: { type: String, enum: ['PAID', 'UNPAID'] },
       },
       dailyRewards: {
         browserDataRewards: {
           reward: { type: Number },
           timestamp: { type: [String] },
+          status: { type: String, enum: ['PAID', 'UNPAID'] },
         },
         emailDataRewards: {
           reward: { type: Number },
           timestamp: { type: [String] },
+          status: { type: String, enum: ['PAID', 'UNPAID'] },
         },
         callDataRewards: {
           reward: { type: Number },
           timestamp: { type: [String] },
+          status: { type: String, enum: ['PAID', 'UNPAID'] },
         },
         referralRewards: {
           reward: { type: Number },
           timestamp: { type: [String] },
           referrals: { type: [String] },
+          status: { type: String, enum: ['PAID', 'UNPAID'] },
         },
       },
     },
