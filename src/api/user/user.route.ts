@@ -212,7 +212,6 @@ router.patch(
         pincode,
         dob,
         annualIncome,
-        permanentAddress,
       } = req.body;
 
       // Find the user by public address
@@ -238,8 +237,6 @@ router.patch(
       user.kyc2.details.pincode = pincode;
       user.kyc2.details.dob = dob;
       user.kyc2.details.annualIncome = annualIncome;
-      user.kyc2.details.permanentAddress = permanentAddress;
-
       // Update KYC2 status to true
       user.kyc2.status = KYCStatus.Unverified;
 

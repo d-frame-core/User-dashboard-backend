@@ -226,7 +226,6 @@ interface KYC2Details {
   pincode?: string;
   dob?: string;
   annualIncome?: string;
-  permanentAddress?: string;
 }
 
 // Image interface for storing image data
@@ -449,7 +448,6 @@ const dFrameUserSchema = new mongoose.Schema(
         pincode: { type: String, default: '' },
         dob: { type: String, default: '' },
         annualIncome: { type: String, default: '' },
-        permanentAddress: { type: String, default: '' },
       },
     },
     kyc3: {
