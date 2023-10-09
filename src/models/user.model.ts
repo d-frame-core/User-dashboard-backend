@@ -291,9 +291,10 @@ interface DFrameUserAttrs {
   userData?: {
     dataDate: string;
     urlData: {
-      urlLink: Set<string>;
+      urlLink: string[];
       timestamps: string[]; // Change this to a regular array
-      tags: Set<string>[];
+      tags: string[];
+      timespent: number[];
     }[];
   }[];
   rewards?: {
@@ -370,9 +371,10 @@ interface DFrameUserDoc extends mongoose.Document {
   userData?: {
     dataDate: string;
     urlData: {
-      urlLink: Set<string>;
+      urlLink: string[];
       timestamps: string[]; // Change this to a regular array
-      tags: Set<string>[];
+      tags: string[];
+      timespent: number[];
     }[];
   }[];
   rewards?: {
@@ -477,6 +479,7 @@ const dFrameUserSchema = new mongoose.Schema(
             urlLink: [String], // Change this to a regular array
             timestamps: [String], // Change this to a regular array
             tags: [String], // Change this to a regular array
+            timespent: [Number],
           },
         ],
       },

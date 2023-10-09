@@ -707,80 +707,343 @@ router.patch(
 );
 
 // POST route to add user data as an array
-router.post('/api/userData/:publicAddress', async (req, res) => {
-  try {
-    const publicAddress = req.params.publicAddress;
-    const dataEntries = req.body; // Array of data entries
+// router.post('/api/userData/:publicAddress', async (req, res) => {
+//   try {
+//     const publicAddress = req.params.publicAddress;
+//     const dataEntries = req.body; // Array of data entries
 
-    // Find the user by their publicAddress
-    let user = await DFrameUser.findOne({ publicAddress });
+//     // Find the user by their publicAddress
+//     let user = await DFrameUser.findOne({ publicAddress });
 
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
+//     if (!user) {
+//       return res.status(404).json({ error: 'User not found' });
+//     }
 
-    // Convert timestamp to the desired format
+//     // Convert timestamp to the desired format
+//     const currentDate = new Date().toLocaleDateString('en-GB');
+
+//     // Iterate through the array of data entries
+//     for (const entry of dataEntries) {
+//       const { urlLink, timestamp, tags, timespent } = entry;
+
+//       // Convert timestamp to the desired format
+//       const formattedTimestamp = new Date(timestamp).toLocaleTimeString(
+//         'en-GB'
+//       );
+
+//       // Check if userData for the current date exists
+//       let userDataForCurrentDate = user.userData?.find(
+//         (data) => data.dataDate === currentDate
+//       );
+
+//       // If userData for the current date exists, check if the URL exists in urlLink
+//       if (userDataForCurrentDate) {
+//         const urlDataIndex = userDataForCurrentDate.urlData.findIndex((data) =>
+//           data.urlLink.has(urlLink)
+//         );
+
+//         if (urlDataIndex !== -1) {
+//           // If the URL exists, update the corresponding timestamps
+//           userDataForCurrentDate.urlData[urlDataIndex].timestamps.push(
+//             formattedTimestamp
+//           );
+//         } else {
+//           // If the URL does not exist, create a new entry
+//           userDataForCurrentDate.urlData.push({
+//             urlLink: new Set([urlLink]),
+//             timestamps: [formattedTimestamp],
+//             tags: [new Set<string>(tags)],
+//             timespent: [timestamp],
+//           });
+//         }
+//       } else {
+//         // Create a new userData object for the current date
+//         userDataForCurrentDate = {
+//           dataDate: currentDate,
+//           urlData: [
+//             {
+//               urlLink: new Set([urlLink]),
+//               timestamps: [formattedTimestamp],
+//               tags: [new Set<string>(tags)],
+//               timespent: [timespent],
+//             },
+//           ],
+//         };
+
+//         // Push the new userData object to the user's userData array
+//         (user.userData as any).push(userDataForCurrentDate);
+//       }
+//     }
+
+//     // Save the updated user document
+//     user = await user.save();
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+
+//   res.json({ message: 'Data stored successfully' });
+// });
+
+// router.post('/api/userData/:publicAddress', async (req, res) => {
+//   try {
+//     const publicAddress = req.params.publicAddress;
+//     const dataEntries = req.body; // Array of data entries
+
+//     // Find the user by their publicAddress
+//     let user = await DFrameUser.findOne({ publicAddress });
+
+//     if (!user) {
+//       return res.status(404).json({ error: 'User not found' });
+//     }
+
+//     // Convert timestamp to the desired format
+//     const currentDate = new Date().toLocaleDateString('en-GB');
+
+//     // Iterate through the array of data entries
+//     for (const entry of dataEntries) {
+//       const { urlLink, timestamp, tags, timespent } = entry;
+
+//       // Convert timestamp to the desired format
+//       const formattedTimestamp = new Date(timestamp).toLocaleTimeString(
+//         'en-GB'
+//       );
+
+//       // Check if userData for the current date exists
+//       let userDataForCurrentDate = user.userData?.find(
+//         (data) => data.dataDate === currentDate
+//       );
+
+//       // If userData for the current date exists, check if the URL exists in urlLink
+//       if (userDataForCurrentDate) {
+//         const urlDataIndex = userDataForCurrentDate.urlData.findIndex((data) =>
+//           data.urlLink.has(urlLink)
+//         );
+
+//         if (urlDataIndex !== -1) {
+//           // If the URL exists, update the corresponding timestamps
+//           userDataForCurrentDate.urlData[urlDataIndex].timestamps.push(
+//             formattedTimestamp
+//           );
+//         } else {
+//           // If the URL does not exist, create a new entry
+//           userDataForCurrentDate.urlData.push({
+//             urlLink: new Set([urlLink]),
+//             timestamps: [formattedTimestamp],
+//             tags: [new Set<string>(tags)],
+//             timespent: [timespent],
+//           });
+//         }
+//       } else {
+//         // Create a new userData object for the current date
+//         userDataForCurrentDate = {
+//           dataDate: currentDate,
+//           urlData: [
+//             {
+//               urlLink: new Set([urlLink]),
+//               timestamps: [formattedTimestamp],
+//               tags: [new Set<string>(tags)],
+//               timespent: [timespent],
+//             },
+//           ],
+//         };
+
+//         // Push the new userData object to the user's userData array
+//         (user.userData as any).push(userDataForCurrentDate);
+//       }
+//     }
+
+//     // Save the updated user document
+//     user = await user.save();
+
+//     // Send a success response after the data is saved
+//     res.json({ message: 'Data stored successfully' });
+//   } catch (error) {
+//     console.error(error);
+
+//     // Send an error response if there is an exception
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
+
+// Define the route
+// Define the route
+// router.get(
+//   '/api/top-sites/:publicAddress',
+//   async (req: Request, res: Response) => {
+//     try {
+//       const publicAddress = req.params.publicAddress;
+
+//       // Find the user by their publicAddress
+//       const user = await DFrameUser.findOne({ publicAddress });
+
+//       if (!user) {
+//         return res.status(404).json({ error: 'User not found' });
+//       }
+
+//       // Initialize an object to store site visit counts
+//       const siteVisitCounts: Record<string, number> = {};
+
+//       // Iterate through user's userData to count site visits
+//       (user as any).userData.forEach((userDataEntry: any) => {
+//         userDataEntry.urlData.forEach((siteData: any) => {
+//           const siteLink: string | any = Array.from(siteData.urlLink)[0]; // Assuming there's only one link per siteData
+//           const siteTimestamps: string[] = siteData.timestamps;
+
+//           // Count the visits for each site
+//           const siteVisits: number = siteTimestamps.length;
+
+//           // Update or initialize the site's visit count in the object
+//           if (siteVisitCounts[siteLink]) {
+//             siteVisitCounts[siteLink] += siteVisits;
+//           } else {
+//             siteVisitCounts[siteLink] = siteVisits;
+//           }
+//         });
+//       });
+
+//       // Convert the site visit counts to an array of objects
+//       const topSites = Object.keys(siteVisitCounts).map((siteLink) => ({
+//         siteLink,
+//         visits: siteVisitCounts[siteLink],
+//       }));
+
+//       // Sort the topSites array in descending order of visits
+//       topSites.sort((a, b) => b.visits - a.visits);
+
+//       res.json({ topSites });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ error: 'Internal Server Error' });
+//     }
+//   }
+// );
+
+// POST /api/user-data/:publicAddress
+router.post(
+  '/api/user-data/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+    const { urlLink, tags, timespent, timestamp } = req.body;
+
+    // Define currentDate in localeDateString('en-GB') format
     const currentDate = new Date().toLocaleDateString('en-GB');
 
-    // Iterate through the array of data entries
-    for (const entry of dataEntries) {
-      const { urlLink, timestamp, tags } = entry;
+    try {
+      const user = await DFrameUser.findOne({ publicAddress });
 
-      // Convert timestamp to the desired format
-      const formattedTimestamp = new Date(timestamp).toLocaleTimeString(
-        'en-GB'
-      );
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
 
-      // Check if userData for the current date exists
-      let userDataForCurrentDate = user.userData?.find(
+      // Ensure user.userData is defined or initialize it as an empty array
+      user.userData = user.userData || [];
+
+      // Convert the received timestamp to localeTimeString('en-GB')
+      const localeTimeString = new Date(timestamp).toLocaleTimeString('en-GB');
+
+      // Convert timespent to a number
+      const parsedTimespent = parseFloat(timespent);
+
+      // Check if the user already has userData for the currentDate
+      const existingUserData = user.userData.find(
         (data) => data.dataDate === currentDate
       );
 
-      // If userData for the current date exists, check if the URL exists in urlLink
-      if (userDataForCurrentDate) {
-        const urlDataIndex = userDataForCurrentDate.urlData.findIndex((data) =>
-          data.urlLink.has(urlLink)
+      if (existingUserData) {
+        // If data for the same date exists, update it
+        const existingUrlIndex = existingUserData.urlData.findIndex(
+          (url) => url.urlLink[0] === urlLink[0]
         );
 
-        if (urlDataIndex !== -1) {
-          // If the URL exists, update the corresponding timestamps
-          userDataForCurrentDate.urlData[urlDataIndex].timestamps.push(
-            formattedTimestamp
+        if (existingUrlIndex !== -1) {
+          // Url already exists, so just push new timestamp and timespent
+          existingUserData.urlData[existingUrlIndex].timestamps.push(
+            localeTimeString
+          );
+          existingUserData.urlData[existingUrlIndex].timespent.push(
+            parsedTimespent
           );
         } else {
-          // If the URL does not exist, create a new entry
-          userDataForCurrentDate.urlData.push({
-            urlLink: new Set([urlLink]),
-            timestamps: [formattedTimestamp],
-            tags: [new Set<string>(tags)],
+          // Url doesn't exist yet, so add new entry
+          existingUserData.urlData.push({
+            urlLink: urlLink,
+            timestamps: [localeTimeString],
+            tags: tags,
+            timespent: [parsedTimespent],
           });
         }
       } else {
-        // Create a new userData object for the current date
-        userDataForCurrentDate = {
+        console.log('Adding new data for the current date');
+        // Add a new entry for the currentDate with an empty timespent array
+        user.userData.push({
           dataDate: currentDate,
           urlData: [
             {
-              urlLink: new Set([urlLink]),
-              timestamps: [formattedTimestamp],
-              tags: [new Set<string>(tags)],
+              urlLink: urlLink,
+              timestamps: [localeTimeString],
+              tags: tags,
+              timespent: [parsedTimespent],
             },
           ],
-        };
-
-        // Push the new userData object to the user's userData array
-        (user.userData as any).push(userDataForCurrentDate);
+        });
       }
+
+      await user.save();
+
+      res.status(200).json(user);
+    } catch (error) {
+      console.error('Error adding user data:', error);
+      res.status(500).json({ error: 'Internal server error' });
     }
-
-    // Save the updated user document
-    user = await user.save();
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
   }
+);
 
-  res.json({ message: 'Data stored successfully' });
-});
+// DELETE /api/user-data/:publicAddress
+router.delete(
+  '/api/user-data/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+
+    try {
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Optionally, you can clear the userData for the user
+      user.userData = [];
+
+      await user.save();
+
+      res.status(200).json({ message: 'User data deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting user data:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
+
+// GET /api/user-data/:publicAddress
+router.get(
+  '/api/user-data/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+
+    try {
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      res.status(200).json(user.userData);
+    } catch (error) {
+      console.error('Error retrieving user data:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
 
 export { router as UserRouter };

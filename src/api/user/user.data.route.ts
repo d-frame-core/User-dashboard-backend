@@ -186,4 +186,91 @@ router.delete(
   }
 );
 
+// POST /api/user-data/:publicAddress
+router.post(
+  '/api/user-data/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+    const dataToAdd = req.body;
+
+    // Define currentDate in localeDateString('en-GB') format
+    const currentDate = new Date().toLocaleDateString('en-GB');
+
+    try {
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Ensure user.userData is defined or initialize it as an empty array
+      user.userData = user.userData || [];
+
+      // Convert the received timestamp to localeTimeString('en-GB')
+      const localeTimeString = new Date(dataToAdd.timestamp).toLocaleTimeString(
+        'en-GB'
+      );
+
+      // Extract the date from the timestamp and convert it to localeDateString('en-GB')
+      const timestampDate = new Date(dataToAdd.timestamp).toLocaleDateString(
+        'en-GB'
+      );
+
+      // Check if the user already has userData for the provided dataDate
+      const existingUserData = user.userData.find(
+        (data) => data.dataDate === timestampDate
+      );
+
+      if (existingUserData) {
+        // If data for the same date exists, update it
+        const existingUrlIndex = existingUserData.urlData.findIndex(
+          (url) => url.urlLink[0] === dataToAdd.urlData.urlLink[0]
+        );
+
+        if (existingUrlIndex !== -1) {
+          // Url already exists, so just push new timestamp
+          existingUserData.urlData[existingUrlIndex].timestamps.push(
+            localeTimeString
+          );
+          existingUserData.urlData[existingUrlIndex].tags.push(
+            ...dataToAdd.urlData.tags
+          );
+          existingUserData.urlData[existingUrlIndex].timespent.push(
+            dataToAdd.urlData.timespent[0]
+          );
+        } else {
+          // Url doesn't exist yet, so add new entry
+          existingUserData.urlData.push({
+            urlLink: dataToAdd.urlData.urlLink,
+            timestamps: [localeTimeString],
+            tags: dataToAdd.urlData.tags,
+            timespent: [dataToAdd.urlData.timespent[0]],
+          });
+        }
+      } else {
+        console.log('Adding new data for a new date');
+        // Add a new entry for a new date
+        user.userData.push({
+          dataDate: timestampDate,
+          urlData: [
+            {
+              urlLink: dataToAdd.urlData.urlLink,
+              timestamps: [localeTimeString],
+              tags: dataToAdd.urlData.tags,
+              timespent: [dataToAdd.urlData.timespent[0]],
+            },
+          ],
+        });
+      }
+
+      await user.save();
+
+      res.status(200).json(user);
+    } catch (error) {
+      console.error('Error adding user data:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
+
 export { router as UserDataRouter };
