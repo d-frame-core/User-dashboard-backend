@@ -1,39 +1,68 @@
-import mongoose, { Schema } from 'mongoose';
+/** @format */
 
-interface UserAttrs {
-	data: Schema.Types.Mixed
-}
+const mongoose = require('mongoose');
 
-interface UserDoc extends mongoose.Document {
-	data: Schema.Types.Mixed
-}
+const surveySchema = new mongoose.Schema({
+  surveyName: {
+    type: String,
+    required: true,
+  },
+  surveyDescription: {
+    type: String,
+    required: true,
+  },
+  clientId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Client',
+    required: true,
+  },
+  totalQues: [
+    {
+      questionNumber: {
+        type: Number,
+        required: true,
+      },
+      title: {
+        type: String,
+        required: true,
+      },
+      options: [
+        {
+          type: String,
+          required: true,
+        },
+      ],
+      userAnswers: [
+        [
+          {
+            type: String,
+            ref: 'User',
+          },
+        ],
+      ],
+    },
+  ],
+  totalRes: {
+    type: Number,
+  },
+  totalReward: {
+    type: Number,
+    required: true,
+  },
+  statusCampaign: {
+    type: String,
+    default: 'unverified', //verified,unverified,stop,completed
+  },
+  startDate: {
+    type: Date,
+    required: true,
+  },
+  endDate: {
+    type: Date,
+    required: true,
+  },
+});
 
-interface UserModel extends mongoose.Model<UserDoc> {
-	build(attrs: UserAttrs): UserDoc;
-}
-const userSchema = new mongoose.Schema(
-	{
-		data: {type: Schema.Types.Mixed}
-	},
-	{
-		timestamps: true,
-		toJSON: {
-			transform(doc, ret) {
-				/*
-                    '_id' is transformed to 'id' as later people can use different databases and different languages as part of microservices architecture so 'id' is more standard key in databases, only mongodb uses '_id'
-                */
-				ret.id = ret._id;
-				delete ret._id;
-				delete ret.__v;
-			},
-		},
-	},
-);
+const SurveySchema = mongoose.model('Survey', surveySchema);
 
-userSchema.statics.build = (attrs: UserAttrs) => {
-	return new Survey(attrs);
-};
-
-const Survey = mongoose.model<UserDoc, UserModel>('Survey', userSchema);
-
-export {Survey};
+export { SurveySchema };
