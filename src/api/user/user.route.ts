@@ -1044,6 +1044,70 @@ router.get(
   }
 );
 
+// // GET /api/user-data/top-sites/:publicAddress
+// router.get(
+//   '/api/user-data/top-sites/:publicAddress',
+//   async (req: Request, res: Response) => {
+//     const { publicAddress } = req.params;
+
+//     try {
+//       // Calculate the date one month ago from the current date
+//       const oneMonthAgo = new Date();
+//       oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+//       const user = await DFrameUser.findOne({ publicAddress });
+
+//       if (!user) {
+//         return res.status(404).json({ error: 'User not found' });
+//       }
+
+//       // Filter userData for the past one month
+//       const pastOneMonthUserData = (user as any).userData.filter(
+//         (data: any) => {
+//           const dataDate = new Date(data.dataDate);
+//           return dataDate >= oneMonthAgo;
+//         }
+//       );
+
+//       // Create a map to store website visit counts
+//       const websiteVisitCounts = new Map();
+
+//       // Iterate through the pastOneMonthUserData to count website visits
+//       pastOneMonthUserData.forEach((data: any) => {
+//         if (data.urlData) {
+//           data.urlData.forEach((urlData: any) => {
+//             const urlLink = urlData.urlLink.trim();
+
+//             if (!websiteVisitCounts.has(urlLink)) {
+//               websiteVisitCounts.set(urlLink, 0);
+//             }
+
+//             // Count visits based on the length of the timestamps array
+//             const visits = urlData.timestamps.length;
+//             websiteVisitCounts.set(
+//               urlLink,
+//               websiteVisitCounts.get(urlLink) + visits
+//             );
+//           });
+//         }
+//       });
+
+//       // Convert the map to an array of objects
+//       const topVisitedWebsites = Array.from(
+//         websiteVisitCounts,
+//         ([website, visits]) => ({ website, visits })
+//       );
+
+//       // Sort the websites based on visit counts in descending order
+//       topVisitedWebsites.sort((a, b) => b.visits - a.visits);
+
+//       res.status(200).json(topVisitedWebsites);
+//     } catch (error) {
+//       console.error('Error retrieving top visited websites:', error);
+//       res.status(500).json({ error: 'Internal server error' });
+//     }
+//   }
+// );
 // GET /api/user-data/top-sites/:publicAddress
 router.get(
   '/api/user-data/top-sites/:publicAddress',
@@ -1092,16 +1156,17 @@ router.get(
         }
       });
 
-      // Convert the map to an array of objects
+      // Convert the map to an array of objects with "name" and "visits"
       const topVisitedWebsites = Array.from(
         websiteVisitCounts,
-        ([website, visits]) => ({ website, visits })
+        ([website, visits]) => ({ name: website, visits })
       );
 
       // Sort the websites based on visit counts in descending order
       topVisitedWebsites.sort((a, b) => b.visits - a.visits);
-
-      res.status(200).json(topVisitedWebsites);
+      // Slice the array to return only the top 5 visited websites
+      const top5VisitedWebsites = topVisitedWebsites.slice(0, 5);
+      res.status(200).json(top5VisitedWebsites);
     } catch (error) {
       console.error('Error retrieving top visited websites:', error);
       res.status(500).json({ error: 'Internal server error' });
@@ -1147,16 +1212,19 @@ router.get(
         }
       });
 
-      // Convert the map to an array of objects
+      // Convert the map to an array of objects with "name" and "time"
       const topTimespentWebsites = Array.from(
         websiteTimespentSum,
-        ([website, timespentSum]) => ({ website, timespentSum })
+        ([website, timespentSum]) => ({ name: website, time: timespentSum })
       );
 
       // Sort the websites based on timespent sum in descending order
-      topTimespentWebsites.sort((a, b) => b.timespentSum - a.timespentSum);
+      topTimespentWebsites.sort((a, b) => b.time - a.time);
 
-      res.status(200).json(topTimespentWebsites);
+      // Slice the array to return only the top 5 websites
+      const top5TimespentWebsites = topTimespentWebsites.slice(0, 5);
+
+      res.status(200).json(top5TimespentWebsites);
     } catch (error) {
       console.error('Error retrieving top timespent websites:', error);
       res.status(500).json({ error: 'Internal server error' });
