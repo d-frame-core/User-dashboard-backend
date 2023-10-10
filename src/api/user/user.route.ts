@@ -679,15 +679,15 @@ router.patch(
       user.kyc3 = {
         status: KYCStatus.Unverified, // Set status to 'unverified' as a string,
         governmentProof1: {
-          data: fs.readFileSync(imagePath1),
+          data: (governmentProof1 as any).buffer,
           contentType: (governmentProof1 as any).mimetype,
         },
         governmentProof2: {
-          data: fs.readFileSync(imagePath2),
+          data: (governmentProof2 as any).buffer,
           contentType: (governmentProof2 as any).mimetype,
         },
         userPhoto: {
-          data: fs.readFileSync(imagePath3),
+          data: (userPhoto as any).buffer,
           contentType: (userPhoto as any).mimetype,
         },
       };
@@ -918,7 +918,6 @@ router.patch(
 //     }
 //   }
 // );
-
 // POST /api/user-data/:publicAddress
 router.post(
   '/api/user-data/:publicAddress',
@@ -951,21 +950,18 @@ router.post(
       );
 
       if (existingUserData) {
+        console.log('existing data is there');
         // If data for the same date exists, update it
-        const existingUrlIndex = existingUserData.urlData.findIndex(
-          (url) => url.urlLink[0] === urlLink[0]
+        const existingUrlData = existingUserData.urlData.find(
+          (urlData) => urlData.urlLink === urlLink
         );
 
-        if (existingUrlIndex !== -1) {
-          // Url already exists, so just push new timestamp and timespent
-          existingUserData.urlData[existingUrlIndex].timestamps.push(
-            localeTimeString
-          );
-          existingUserData.urlData[existingUrlIndex].timespent.push(
-            parsedTimespent
-          );
+        if (existingUrlData) {
+          // Website already exists, so just push new timestamp and timespent
+          existingUrlData.timestamps.push(localeTimeString);
+          existingUrlData.timespent.push(parsedTimespent);
         } else {
-          // Url doesn't exist yet, so add new entry
+          // Website doesn't exist yet, so add new entry
           existingUserData.urlData.push({
             urlLink: urlLink,
             timestamps: [localeTimeString],
@@ -1000,6 +996,7 @@ router.post(
 );
 
 // DELETE /api/user-data/:publicAddress
+// DELETE /api/user-data/:publicAddress
 router.delete(
   '/api/user-data/:publicAddress',
   async (req: Request, res: Response) => {
@@ -1026,6 +1023,7 @@ router.delete(
 );
 
 // GET /api/user-data/:publicAddress
+// GET /api/user-data/:publicAddress
 router.get(
   '/api/user-data/:publicAddress',
   async (req: Request, res: Response) => {
@@ -1045,5 +1043,74 @@ router.get(
     }
   }
 );
+
+// GET /api/user-data/top-sites/:publicAddress
+// router.get(
+//   '/api/user-data/top-sites/:publicAddress',
+//   async (req: Request, res: Response) => {
+//     const { publicAddress } = req.params;
+
+//     try {
+//       // Calculate the date one month ago from the current date
+//       const oneMonthAgo = new Date();
+//       oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+//       const user = await DFrameUser.findOne({ publicAddress });
+
+//       if (!user) {
+//         return res.status(404).json({ error: 'User not found' });
+//       }
+
+//       // Filter userData for the past one month
+//       const pastOneMonthUserData = (user as any).userData.filter(
+//         (data: any) => {
+//           const dataDate = new Date(data.dataDate);
+//           return dataDate >= oneMonthAgo;
+//         }
+//       );
+
+//       // Create a map to store website visit counts
+//       const websiteVisitCounts = new Map();
+
+//       // Iterate through the pastOneMonthUserData to count website visits
+//       pastOneMonthUserData.forEach((data: any) => {
+//         if (data.urlData) {
+//           data.urlData.forEach((urlData: any) => {
+//             const urlLink = urlData.urlLink[0].trim(); // Trim whitespace
+
+//             if (urlLink && urlLink !== '') {
+//               if (!websiteVisitCounts.has(urlLink)) {
+//                 websiteVisitCounts.set(urlLink, 0);
+//               }
+
+//               // Count visits based on the length of the timestamps array
+//               const visits = urlData.timestamps.length;
+//               websiteVisitCounts.set(
+//                 urlLink,
+//                 websiteVisitCounts.get(urlLink) + visits
+//               );
+//             }
+//           });
+//         }
+//       });
+
+//       // Sort the websites based on visit counts in descending order
+//       const sortedWebsites = [...websiteVisitCounts.entries()].sort((a, b) => {
+//         return b[1] - a[1];
+//       });
+
+//       // Create an array of objects with website name and total visits
+//       const topVisitedWebsites = sortedWebsites.map((entry) => ({
+//         website: entry[0],
+//         visits: entry[1],
+//       }));
+
+//       res.status(200).json(topVisitedWebsites);
+//     } catch (error) {
+//       console.error('Error retrieving top visited websites:', error);
+//       res.status(500).json({ error: 'Internal server error' });
+//     }
+//   }
+// );
 
 export { router as UserRouter };
