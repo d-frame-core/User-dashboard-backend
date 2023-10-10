@@ -6,9 +6,11 @@ const router = express.Router();
 import { SurveySchema } from '../../models/survey.model';
 
 // Define the route to get the latest survey
-// Define the route to get the latest verified survey
-router.get('/api/getlatestSurvey', async (req, res) => {
+
+router.get('/api/getLatestSurvey/:publicAddress', async (req, res) => {
   try {
+    const publicAddress = req.params.publicAddress;
+
     // Find the latest survey with a status of "verified" based on the startDate field
     const latestVerifiedSurvey = await SurveySchema.findOne({
       statusCampaign: 'verified',
@@ -20,7 +22,40 @@ router.get('/api/getlatestSurvey', async (req, res) => {
         .json({ message: 'No verified surveys found in the database' });
     }
 
+    // Check if the user's public address is not in any of the userAnswers arrays
+    const userAddressFound = latestVerifiedSurvey.totalQues.some(
+      (question: any) => {
+        return question.userAnswers.some((userAnswer: any) => {
+          return userAnswer.includes(publicAddress);
+        });
+      }
+    );
+
+    if (userAddressFound) {
+      return res.status(403).json({
+        message: 'User has already participated in the latest survey',
+      });
+    }
+
     res.json(latestVerifiedSurvey);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+router.get('/api/getAllSurveys', async (req, res) => {
+  try {
+    // Find all surveys without any filter
+    const allSurveys = await SurveySchema.find();
+
+    if (!allSurveys || allSurveys.length === 0) {
+      return res
+        .status(404)
+        .json({ message: 'No surveys found in the database' });
+    }
+
+    res.json(allSurveys);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

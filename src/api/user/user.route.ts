@@ -1045,72 +1045,123 @@ router.get(
 );
 
 // GET /api/user-data/top-sites/:publicAddress
-// router.get(
-//   '/api/user-data/top-sites/:publicAddress',
-//   async (req: Request, res: Response) => {
-//     const { publicAddress } = req.params;
+router.get(
+  '/api/user-data/top-sites/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
 
-//     try {
-//       // Calculate the date one month ago from the current date
-//       const oneMonthAgo = new Date();
-//       oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+    try {
+      // Calculate the date one month ago from the current date
+      const oneMonthAgo = new Date();
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-//       const user = await DFrameUser.findOne({ publicAddress });
+      const user = await DFrameUser.findOne({ publicAddress });
 
-//       if (!user) {
-//         return res.status(404).json({ error: 'User not found' });
-//       }
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
 
-//       // Filter userData for the past one month
-//       const pastOneMonthUserData = (user as any).userData.filter(
-//         (data: any) => {
-//           const dataDate = new Date(data.dataDate);
-//           return dataDate >= oneMonthAgo;
-//         }
-//       );
+      // Filter userData for the past one month
+      const pastOneMonthUserData = (user as any).userData.filter(
+        (data: any) => {
+          const dataDate = new Date(data.dataDate);
+          return dataDate >= oneMonthAgo;
+        }
+      );
 
-//       // Create a map to store website visit counts
-//       const websiteVisitCounts = new Map();
+      // Create a map to store website visit counts
+      const websiteVisitCounts = new Map();
 
-//       // Iterate through the pastOneMonthUserData to count website visits
-//       pastOneMonthUserData.forEach((data: any) => {
-//         if (data.urlData) {
-//           data.urlData.forEach((urlData: any) => {
-//             const urlLink = urlData.urlLink[0].trim(); // Trim whitespace
+      // Iterate through the pastOneMonthUserData to count website visits
+      pastOneMonthUserData.forEach((data: any) => {
+        if (data.urlData) {
+          data.urlData.forEach((urlData: any) => {
+            const urlLink = urlData.urlLink.trim();
 
-//             if (urlLink && urlLink !== '') {
-//               if (!websiteVisitCounts.has(urlLink)) {
-//                 websiteVisitCounts.set(urlLink, 0);
-//               }
+            if (!websiteVisitCounts.has(urlLink)) {
+              websiteVisitCounts.set(urlLink, 0);
+            }
 
-//               // Count visits based on the length of the timestamps array
-//               const visits = urlData.timestamps.length;
-//               websiteVisitCounts.set(
-//                 urlLink,
-//                 websiteVisitCounts.get(urlLink) + visits
-//               );
-//             }
-//           });
-//         }
-//       });
+            // Count visits based on the length of the timestamps array
+            const visits = urlData.timestamps.length;
+            websiteVisitCounts.set(
+              urlLink,
+              websiteVisitCounts.get(urlLink) + visits
+            );
+          });
+        }
+      });
 
-//       // Sort the websites based on visit counts in descending order
-//       const sortedWebsites = [...websiteVisitCounts.entries()].sort((a, b) => {
-//         return b[1] - a[1];
-//       });
+      // Convert the map to an array of objects
+      const topVisitedWebsites = Array.from(
+        websiteVisitCounts,
+        ([website, visits]) => ({ website, visits })
+      );
 
-//       // Create an array of objects with website name and total visits
-//       const topVisitedWebsites = sortedWebsites.map((entry) => ({
-//         website: entry[0],
-//         visits: entry[1],
-//       }));
+      // Sort the websites based on visit counts in descending order
+      topVisitedWebsites.sort((a, b) => b.visits - a.visits);
 
-//       res.status(200).json(topVisitedWebsites);
-//     } catch (error) {
-//       console.error('Error retrieving top visited websites:', error);
-//       res.status(500).json({ error: 'Internal server error' });
-//     }
-//   }
-// );
+      res.status(200).json(topVisitedWebsites);
+    } catch (error) {
+      console.error('Error retrieving top visited websites:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
+
+// GET /api/user-data/top-times/:publicAddress
+router.get(
+  '/api/user-data/top-times/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+
+    try {
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Create a map to store the sum of timespent for each website
+      const websiteTimespentSum = new Map();
+
+      // Iterate through the user's data to calculate timespent sum
+      (user as any).userData.forEach((data: any) => {
+        if (data.urlData) {
+          data.urlData.forEach((urlData: any) => {
+            const urlLink = urlData.urlLink.trim();
+            const timespentSum = urlData.timespent.reduce(
+              (total: number, time: number) => total + time,
+              0
+            );
+
+            if (!websiteTimespentSum.has(urlLink)) {
+              websiteTimespentSum.set(urlLink, 0);
+            }
+
+            websiteTimespentSum.set(
+              urlLink,
+              websiteTimespentSum.get(urlLink) + timespentSum
+            );
+          });
+        }
+      });
+
+      // Convert the map to an array of objects
+      const topTimespentWebsites = Array.from(
+        websiteTimespentSum,
+        ([website, timespentSum]) => ({ website, timespentSum })
+      );
+
+      // Sort the websites based on timespent sum in descending order
+      topTimespentWebsites.sort((a, b) => b.timespentSum - a.timespentSum);
+
+      res.status(200).json(topTimespentWebsites);
+    } catch (error) {
+      console.error('Error retrieving top timespent websites:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
 
 export { router as UserRouter };
