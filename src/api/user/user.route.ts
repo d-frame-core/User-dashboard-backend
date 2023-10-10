@@ -1232,4 +1232,44 @@ router.get(
   }
 );
 
+// GET /api/user-data/tags/:publicAddress
+router.get(
+  '/api/user-data/tags/:publicAddress',
+  async (req: Request, res: Response) => {
+    const { publicAddress } = req.params;
+    const { tags } = req.body;
+
+    try {
+      const user = await DFrameUser.findOne({ publicAddress });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
+      // Create an array to store matching websites
+      const matchingWebsites: any[] = [];
+
+      // Iterate through the user's data to find websites with matching tags
+      (user as any).userData.forEach((data: any) => {
+        if (data.urlData) {
+          data.urlData.forEach((urlData: any) => {
+            const urlLink = urlData.urlLink.trim();
+            const urlTags = urlData.tags;
+
+            // Check if any of the tags match the provided tags
+            if (tags.some((tag: any) => urlTags.includes(tag))) {
+              matchingWebsites.push({ urlLink, tags: urlTags });
+            }
+          });
+        }
+      });
+
+      res.status(200).json(matchingWebsites);
+    } catch (error) {
+      console.error('Error retrieving matching websites by tags:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+);
+
 export { router as UserRouter };
