@@ -70,6 +70,45 @@ router.post(
     }
   }
 );
+router.post('/api/user/:publicAddress', async (req, res) => {
+  try {
+    const publicAddress = req.params.publicAddress;
+    const userData = req.body;
+
+    // Check if the user already exists with the given publicAddress
+    const existingUser = await DFrameUser.findOne({ publicAddress });
+
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    // Create a new user based on the provided data
+    const newUser = new DFrameUser(userData.user);
+
+    // Save the user to the database
+    await newUser.save();
+
+    // Create a JWT token with user information
+    const jwtPayload = {
+      userId: newUser._id, // Assuming your user model has an "_id" field
+    };
+
+    const jwtSecret = process.env.JWT_SECRET; // Ensure you have JWT_SECRET in your environment variables
+
+    if (!jwtSecret) {
+      throw new Error('JWT_SECRET is not defined in the environment variables');
+    }
+
+    // Sign the JWT token
+    const token = jwt.sign(jwtPayload, jwtSecret);
+
+    // Return the user details and token in the response
+    res.status(201).json({ user: newUser, token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
 router.get('/api/user/:publicAddress', async (req: Request, res: Response) => {
   try {
