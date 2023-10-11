@@ -919,15 +919,90 @@ router.patch(
 //   }
 // );
 // POST /api/user-data/:publicAddress
+// router.post(
+//   '/api/user-data/:publicAddress',
+//   async (req: Request, res: Response) => {
+//     const { publicAddress } = req.params;
+//     const { urlLink, tags, timespent, timestamp } = req.body;
+
+//     // Define currentDate in localeDateString('en-GB') format
+//     const currentDate = new Date().toLocaleDateString('en-GB');
+
+//     try {
+//       const user = await DFrameUser.findOne({ publicAddress });
+
+//       if (!user) {
+//         return res.status(404).json({ error: 'User not found' });
+//       }
+
+//       // Ensure user.userData is defined or initialize it as an empty array
+//       user.userData = user.userData || [];
+
+//       // Convert the received timestamp to localeTimeString('en-GB')
+//       const localeTimeString = new Date(timestamp).toLocaleTimeString('en-GB');
+
+//       // Convert timespent to a number
+//       const parsedTimespent = parseFloat(timespent);
+
+//       // Check if the user already has userData for the currentDate
+//       const existingUserData = user.userData.find(
+//         (data) => data.dataDate === currentDate
+//       );
+
+//       if (existingUserData) {
+//         console.log('existing data is there');
+//         // If data for the same date exists, update it
+//         const existingUrlData = existingUserData.urlData.find(
+//           (urlData) => urlData.urlLink === urlLink
+//         );
+
+//         if (existingUrlData) {
+//           // Website already exists, so just push new timestamp and timespent
+//           existingUrlData.timestamps.push(localeTimeString);
+//           existingUrlData.timespent.push(parsedTimespent);
+//         } else {
+//           // Website doesn't exist yet, so add new entry
+//           existingUserData.urlData.push({
+//             urlLink: urlLink,
+//             timestamps: [localeTimeString],
+//             tags: tags,
+//             timespent: [parsedTimespent],
+//           });
+//         }
+//       } else {
+//         console.log('Adding new data for the current date');
+//         // Add a new entry for the currentDate with an empty timespent array
+//         user.userData.push({
+//           dataDate: currentDate,
+//           urlData: [
+//             {
+//               urlLink: urlLink,
+//               timestamps: [localeTimeString],
+//               tags: tags,
+//               timespent: [parsedTimespent],
+//             },
+//           ],
+//         });
+//       }
+
+//       await user.save();
+
+//       res.status(200).json(user);
+//     } catch (error) {
+//       console.error('Error adding user data:', error);
+//       res.status(500).json({ error: 'Internal server error' });
+//     }
+//   }
+// );
+// POST /api/user-data/:publicAddress
 router.post(
   '/api/user-data/:publicAddress',
   async (req: Request, res: Response) => {
     const { publicAddress } = req.params;
-    const { urlLink, tags, timespent, timestamp } = req.body;
-
-    // Define currentDate in localeDateString('en-GB') format
-    const currentDate = new Date().toLocaleDateString('en-GB');
-
+    const dataEntries: any[] = req.body.tabData; // Array of data entries
+    console.log('dataEntries stores below');
+    console.log(typeof dataEntries);
+    console.log(dataEntries);
     try {
       const user = await DFrameUser.findOne({ publicAddress });
 
@@ -935,54 +1010,68 @@ router.post(
         return res.status(404).json({ error: 'User not found' });
       }
 
-      // Ensure user.userData is defined or initialize it as an empty array
-      user.userData = user.userData || [];
+      // Define currentDate in localeDateString('en-GB') format
+      const currentDate = new Date().toLocaleDateString('en-GB');
 
-      // Convert the received timestamp to localeTimeString('en-GB')
-      const localeTimeString = new Date(timestamp).toLocaleTimeString('en-GB');
+      // Define static tags
+      const staticTags = ['dframe', 'web3'];
 
-      // Convert timespent to a number
-      const parsedTimespent = parseFloat(timespent);
+      // Iterate through the array of data entries
+      if (dataEntries.length < 1) {
+        return res.status(200).send('No data entries found');
+      }
+      for (const entry of dataEntries) {
+        const { urlLink, properties } = entry;
+        const { timeStamp, time_on_site } = properties;
 
-      // Check if the user already has userData for the currentDate
-      const existingUserData = user.userData.find(
-        (data) => data.dataDate === currentDate
-      );
-
-      if (existingUserData) {
-        console.log('existing data is there');
-        // If data for the same date exists, update it
-        const existingUrlData = existingUserData.urlData.find(
-          (urlData) => urlData.urlLink === urlLink
+        // Convert the received timestamp to localeTimeString('en-GB')
+        const localeTimeString = new Date(timeStamp).toLocaleTimeString(
+          'en-GB'
         );
 
-        if (existingUrlData) {
-          // Website already exists, so just push new timestamp and timespent
-          existingUrlData.timestamps.push(localeTimeString);
-          existingUrlData.timespent.push(parsedTimespent);
-        } else {
-          // Website doesn't exist yet, so add new entry
-          existingUserData.urlData.push({
-            urlLink: urlLink,
-            timestamps: [localeTimeString],
-            tags: tags,
-            timespent: [parsedTimespent],
-          });
-        }
-      } else {
-        console.log('Adding new data for the current date');
-        // Add a new entry for the currentDate with an empty timespent array
-        user.userData.push({
-          dataDate: currentDate,
-          urlData: [
-            {
+        // Convert time_spent to a number
+        const parsedTimeSpent = parseFloat(time_on_site);
+
+        // Check if the user already has userData for the currentDate
+        const existingUserData = (user as any).userData.find(
+          (data: any) => data.dataDate === currentDate
+        );
+
+        if (existingUserData) {
+          // If data for the same date exists, update it
+          const existingUrlData = existingUserData.urlData.find(
+            (urlData: any) => urlData.urlLink === urlLink
+          );
+
+          if (existingUrlData) {
+            // Website already exists, so just push new timestamp and time_spent
+            if (!existingUrlData.timestamps.includes(localeTimeString)) {
+              existingUrlData.timestamps.push(localeTimeString);
+              existingUrlData.timespent.push(parsedTimeSpent);
+            }
+          } else {
+            // Website doesn't exist yet, so add a new entry with static tags
+            existingUserData.urlData.push({
               urlLink: urlLink,
               timestamps: [localeTimeString],
-              tags: tags,
-              timespent: [parsedTimespent],
-            },
-          ],
-        });
+              tags: staticTags,
+              timespent: [parsedTimeSpent],
+            });
+          }
+        } else {
+          // Add a new entry for the currentDate with an empty timespent array and static tags
+          (user as any).userData.push({
+            dataDate: currentDate,
+            urlData: [
+              {
+                urlLink: urlLink,
+                timestamps: [localeTimeString],
+                tags: staticTags,
+                timespent: [parsedTimeSpent],
+              },
+            ],
+          });
+        }
       }
 
       await user.save();
