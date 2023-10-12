@@ -117,6 +117,14 @@ interface DFrameUserAttrs {
       };
     };
   };
+  userAds?: {
+    date: string;
+    ads: {
+      adsId: string;
+      rewards: number;
+      status: 'PAID' | 'UNPAID';
+    }[];
+  }[];
 }
 
 // Updated DFrameUserDoc interface
@@ -197,6 +205,14 @@ interface DFrameUserDoc extends mongoose.Document {
       };
     };
   };
+  userAds?: {
+    date: string;
+    ads: {
+      adsId: string;
+      rewards: number;
+      status: 'PAID' | 'UNPAID';
+    }[];
+  }[];
 }
 
 // Define a mongoose schema for DFrameUser
@@ -304,6 +320,18 @@ const dFrameUserSchema = new mongoose.Schema(
         },
       },
     },
+    userAds: [
+      {
+        date: { type: String },
+        ads: [
+          {
+            adsId: { type: String },
+            rewards: { type: Number },
+            status: { type: String, enum: ['PAID', 'UNPAID'] },
+          },
+        ],
+      },
+    ],
   },
 
   {
