@@ -99,6 +99,12 @@ interface DFrameUserAttrs {
         timestamp: string[];
         status: 'PAID' | 'UNPAID';
       };
+      adRewards: {
+        reward: number;
+        adIds: string[];
+        timestamp: string[];
+        status: 'PAID' | 'UNPAID';
+      };
       emailDataRewards: {
         reward: number;
         timestamp: string[];
@@ -122,7 +128,7 @@ interface DFrameUserAttrs {
     ads: {
       adsId: string;
       rewards: number;
-      status: 'PAID' | 'UNPAID';
+      status: 'SEEN' | 'UNSEEN';
     }[];
   }[];
 }
@@ -187,6 +193,12 @@ interface DFrameUserDoc extends mongoose.Document {
         timestamp: string[];
         status: 'PAID' | 'UNPAID';
       };
+      adRewards: {
+        reward: number;
+        adIds: string[];
+        timestamp: string[];
+        status: 'PAID' | 'UNPAID';
+      };
       emailDataRewards: {
         reward: number;
         timestamp: string[];
@@ -210,7 +222,7 @@ interface DFrameUserDoc extends mongoose.Document {
     ads: {
       adsId: string;
       rewards: number;
-      status: 'PAID' | 'UNPAID';
+      status: 'SEEN' | 'UNSEEN';
     }[];
   }[];
 }
@@ -302,6 +314,12 @@ const dFrameUserSchema = new mongoose.Schema(
           timestamp: { type: [String] },
           status: { type: String, enum: ['PAID', 'UNPAID'] },
         },
+        adRewards: {
+          reward: { type: Number },
+          adIds: { type: [String] },
+          timestamp: { type: [String] },
+          status: { type: String, enum: ['PAID', 'UNPAID'] },
+        },
         emailDataRewards: {
           reward: { type: Number },
           timestamp: { type: [String] },
@@ -327,7 +345,7 @@ const dFrameUserSchema = new mongoose.Schema(
           {
             adsId: { type: String },
             rewards: { type: Number },
-            status: { type: String, enum: ['PAID', 'UNPAID'] },
+            status: { type: String, enum: ['SEEN', 'UNSEEN'] },
           },
         ],
       },
