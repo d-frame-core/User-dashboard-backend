@@ -70,6 +70,21 @@ router.post(
     }
   }
 );
+
+router.get('/api/users', async (req, res) => {
+  try {
+    const users = await DFrameUser.find().exec();
+
+    if (!users) {
+      return res.status(404).json({ message: 'No users found' });
+    }
+
+    return res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 router.post('/api/user/:publicAddress', async (req, res) => {
   try {
     const publicAddress = req.params.publicAddress;
@@ -1399,5 +1414,204 @@ router.get(
     }
   }
 );
+
+router.post('/api/update-rewards/:publicAddress', async (req, res) => {
+  const { publicAddress } = req.params;
+  const { browserDataRewards, adRewards, referralRewards } = req.body;
+
+  try {
+    // Find the user by publicAddress
+    const user = await DFrameUser.findOne({ publicAddress });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Create a new date with the current timestamp in en-GB format
+    const currentDate = new Date().toLocaleDateString('en-GB');
+
+    // Update the rewards for the specified date or create a new entry
+    const currentTimestamp = '10:45:20'; // A static timestamp
+    (user.rewards as any).dailyRewards = (user.rewards as any).dailyRewards.map(
+      (dailyReward: any) => {
+        if (dailyReward.date === currentDate) {
+          dailyReward.browserDataRewards = {
+            reward: browserDataRewards,
+            timestamp: [currentTimestamp],
+            status: 'UNPAID',
+          };
+          dailyReward.adRewards = [
+            {
+              reward: adRewards,
+              adId: 'ad123', // Replace with your ad ID
+              timestamp: [currentTimestamp],
+              status: 'UNPAID',
+            },
+          ];
+          dailyReward.emailDataRewards = [
+            {
+              reward: 10, // Replace with your email reward value
+              timestamp: [currentTimestamp],
+              status: 'UNPAID',
+            },
+          ];
+          dailyReward.callDataRewards = [
+            {
+              reward: 15, // Replace with your call data reward value
+              timestamp: [currentTimestamp],
+              status: 'UNPAID',
+            },
+          ];
+          dailyReward.referralRewards = [
+            {
+              reward: referralRewards,
+              timestamp: [currentTimestamp],
+              referrals: ['referral9', 'referral10'], // Replace with your referrals
+              status: 'UNPAID',
+            },
+          ];
+        }
+        return dailyReward;
+      }
+    );
+
+    // Save the updated user document
+    await user.save();
+
+    return res.status(200).json({ message: 'Rewards updated successfully' });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+// router.post('/api/update-rewards/:publicAddress', async (req, res) => {
+//   const { publicAddress } = req.params;
+//   const { browserDataRewards, adRewards, referralRewards } = req.body;
+
+//   try {
+//     // Find the user by publicAddress
+//     const user = await DFrameUser.findOne({ publicAddress });
+
+//     if (!user) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     // Create a new date with the current timestamp in en-GB format
+//     const currentDate = new Date().toLocaleDateString('en-GB');
+//     const currentTimestamp = '10:45:20'; // A static timestamp
+
+//     // Find the dailyReward entry for the current date or create a new one
+//     let dailyReward = (user.rewards as any).dailyRewards.find(
+//       (reward: any) => reward.date === currentDate
+//     );
+
+//     if (!dailyReward) {
+//       // If not found, create a new entry
+//       dailyReward = {
+//         date: currentDate,
+//         browserDataRewards: {
+//           reward: 0, // Initialize with 0
+//           timestamp: [],
+//           status: 'UNPAID',
+//         },
+//         adRewards: [],
+//         emailDataRewards: [],
+//         callDataRewards: [],
+//         referralRewards: [],
+//       };
+//       (user.rewards as any).dailyRewards.push(dailyReward);
+//     }
+
+//     // Update rewards for the specified date
+//     dailyReward.browserDataRewards.reward += browserDataRewards;
+//     dailyReward.browserDataRewards.timestamp.push(currentTimestamp);
+//     dailyReward.adRewards.push({
+//       reward: adRewards,
+//       adId: 'ad123', // Replace with your ad ID
+//       timestamp: [currentTimestamp],
+//       status: 'UNPAID',
+//     });
+//     dailyReward.emailDataRewards.push({
+//       reward: 10, // Replace with your email reward value
+//       timestamp: [currentTimestamp],
+//       status: 'UNPAID',
+//     });
+//     dailyReward.callDataRewards.push({
+//       reward: 15, // Replace with your call data reward value
+//       timestamp: [currentTimestamp],
+//       status: 'UNPAID',
+//     });
+//     dailyReward.referralRewards.push({
+//       reward: referralRewards,
+//       timestamp: [currentTimestamp],
+//       referrals: ['referral9', 'referral10'], // Replace with your referrals
+//       status: 'UNPAID',
+//     });
+
+//     // Save the updated user document
+//     await user.save();
+
+//     return res.status(200).json({ message: 'Rewards updated successfully' });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ message: 'Internal Server Error' });
+//   }
+// });
+router.get('/api/get-rewards-insights/:publicAddress', async (req, res) => {
+  const { publicAddress } = req.params;
+
+  try {
+    // Find the user by publicAddress
+    const user = await DFrameUser.findOne({ publicAddress });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Calculate insights for the past 7 days
+    const insights = [];
+    const currentDate = new Date().toLocaleDateString('en-GB');
+    let sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    sevenDaysAgo = (sevenDaysAgo as any).toLocaleDateString('en-GB');
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(sevenDaysAgo);
+      date.setDate(date.getDate() + i);
+      const formattedDate = date.toLocaleDateString('en-GB');
+
+      const dailyReward = (user.rewards as any).dailyRewards.find(
+        (reward: any) => reward.rewardsDate === formattedDate
+      );
+
+      if (dailyReward) {
+        const browserDataReward = dailyReward.browserDataRewards.reward;
+        const adDataReward = dailyReward.adRewards.reduce(
+          (total: any, ad: any) => total + ad.reward,
+          0
+        );
+        const referralDataReward = dailyReward.referralRewards.reward;
+
+        insights.push({
+          date: formattedDate,
+          browserDataReward,
+          adDataReward,
+          referralDataReward,
+        });
+      }
+    }
+
+    // Filter out days with no data and return available data
+    const availableInsights = insights.filter(
+      (insight) => insight.date !== currentDate
+    );
+
+    return res.status(200).json({ insights: availableInsights });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
 export { router as UserRouter };

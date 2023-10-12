@@ -94,6 +94,7 @@ interface DFrameUserAttrs {
       status: 'PAID' | 'UNPAID';
     };
     dailyRewards?: {
+      rewardsDate: string; // Add a rewardsDate field
       browserDataRewards: {
         reward: number;
         timestamp: string[];
@@ -121,8 +122,9 @@ interface DFrameUserAttrs {
         referrals: string[];
         status: 'PAID' | 'UNPAID';
       };
-    };
+    }[];
   };
+
   userAds?: {
     date: string;
     ads: {
@@ -188,6 +190,7 @@ interface DFrameUserDoc extends mongoose.Document {
       status: 'PAID' | 'UNPAID';
     };
     dailyRewards?: {
+      rewardsDate: string; // Add a rewardsDate field
       browserDataRewards: {
         reward: number;
         timestamp: string[];
@@ -215,8 +218,9 @@ interface DFrameUserDoc extends mongoose.Document {
         referrals: string[];
         status: 'PAID' | 'UNPAID';
       };
-    };
+    }[];
   };
+
   userAds?: {
     date: string;
     ads: {
@@ -301,6 +305,7 @@ const dFrameUserSchema = new mongoose.Schema(
         ],
       },
     ],
+
     rewards: {
       verificationRewards: {
         reward: { type: Number },
@@ -308,35 +313,40 @@ const dFrameUserSchema = new mongoose.Schema(
         rewardCategory: { type: [String], enum: Object.values(RewardCategory) },
         status: { type: String, enum: ['PAID', 'UNPAID'] },
       },
-      dailyRewards: {
-        browserDataRewards: {
-          reward: { type: Number },
-          timestamp: { type: [String] },
-          status: { type: String, enum: ['PAID', 'UNPAID'] },
+      dailyRewards: [
+        {
+          rewardsDate: { type: String }, // Add rewardsDate field
+          browserDataRewards: {
+            reward: { type: Number },
+            timestamp: { type: [String] },
+            status: { type: String, enum: ['PAID', 'UNPAID'] },
+          },
+          adRewards: [
+            {
+              reward: { type: Number },
+              adId: { type: String }, // Change to singular 'adId'
+              timestamp: { type: [String] },
+              status: { type: String, enum: ['PAID', 'UNPAID'] },
+            },
+          ],
+          emailDataRewards: {
+            reward: { type: Number },
+            timestamp: { type: [String] },
+            status: { type: String, enum: ['PAID', 'UNPAID'] },
+          },
+          callDataRewards: {
+            reward: { type: Number },
+            timestamp: { type: [String] },
+            status: { type: String, enum: ['PAID', 'UNPAID'] },
+          },
+          referralRewards: {
+            reward: { type: Number },
+            timestamp: { type: [String] },
+            referrals: { type: [String] }, // Change to singular 'referral'
+            status: { type: String, enum: ['PAID', 'UNPAID'] },
+          },
         },
-        adRewards: {
-          reward: { type: Number },
-          adIds: { type: [String] },
-          timestamp: { type: [String] },
-          status: { type: String, enum: ['PAID', 'UNPAID'] },
-        },
-        emailDataRewards: {
-          reward: { type: Number },
-          timestamp: { type: [String] },
-          status: { type: String, enum: ['PAID', 'UNPAID'] },
-        },
-        callDataRewards: {
-          reward: { type: Number },
-          timestamp: { type: [String] },
-          status: { type: String, enum: ['PAID', 'UNPAID'] },
-        },
-        referralRewards: {
-          reward: { type: Number },
-          timestamp: { type: [String] },
-          referrals: { type: [String] },
-          status: { type: String, enum: ['PAID', 'UNPAID'] },
-        },
-      },
+      ],
     },
     userAds: [
       {
