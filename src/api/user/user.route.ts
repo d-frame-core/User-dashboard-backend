@@ -1126,6 +1126,41 @@ router.get(
   }
 );
 
+// // Define the route to get the latest unseen ad by public address.
+// router.get('/api/user/get-latest-ad/:publicAddress', async (req, res) => {
+//   const publicAddress = req.params.publicAddress;
+
+//   try {
+//     // Find the user document based on the public address.
+//     const user = await DFrameUser.findOne({ publicAddress });
+
+//     if (!user) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     // Search for the latest unseen ad.
+//     let latestUnseenAd = null;
+//     for (const userAd of user.userAds as any) {
+//       for (const ad of userAd.ads) {
+//         if (
+//           ad.status === 'unseen' &&
+//           (!latestUnseenAd || userAd.date > latestUnseenAd.date)
+//         ) {
+//           latestUnseenAd = ad;
+//         }
+//       }
+//     }
+
+//     if (!latestUnseenAd || !latestUnseenAd.adsId) {
+//       return res.json({ latestAdId: null });
+//     }
+
+//     res.json({ latestAdId: latestUnseenAd.adsId });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
 // Define the route to get the latest unseen ad by public address.
 router.get('/api/user/get-latest-ad/:publicAddress', async (req, res) => {
   const publicAddress = req.params.publicAddress;
@@ -1138,16 +1173,13 @@ router.get('/api/user/get-latest-ad/:publicAddress', async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Search for the latest unseen ad.
+    // Search for the latest unseen ad for the current day.
     let latestUnseenAd = null;
     for (const userAd of user.userAds as any) {
-      for (const ad of userAd.ads) {
-        if (
-          ad.status === 'unseen' &&
-          (!latestUnseenAd || userAd.date > latestUnseenAd.date)
-        ) {
-          latestUnseenAd = ad;
-        }
+      const ads = userAd.ads;
+      const latestAdForDay = ads[ads.length - 1]; // Get the last ad for the day.
+      if (latestAdForDay && latestAdForDay.status === 'unseen') {
+        latestUnseenAd = latestAdForDay;
       }
     }
 
@@ -1161,6 +1193,38 @@ router.get('/api/user/get-latest-ad/:publicAddress', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+// Define the route to get the latest unseen ad by public address.
+// router.get('/api/user/get-latest-ad/:publicAddress', async (req, res) => {
+//   const publicAddress = req.params.publicAddress;
+
+//   try {
+//     // Find the user document based on the public address.
+//     const user = await DFrameUser.findOne({ publicAddress });
+
+//     if (!user) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     // Flatten the userAds array and filter for unseen ads.
+//     const unseenAds = (user.userAds as any)
+//       .flatMap((userAd: any) => userAd.ads)
+//       .filter((ad: any) => ad.status === 'unseen');
+
+//     if (unseenAds.length === 0) {
+//       return res.json({ latestAdId: null });
+//     }
+
+//     // Sort the unseen ads by date to find the latest one.
+//     unseenAds.sort((a: any, b: any) => b.date.localeCompare(a.date));
+
+//     res.json({ latestAdId: unseenAds[0].adsId });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// });
+
 router.post('/api/update-ad-status/:publicAddress/:adId', async (req, res) => {
   const publicAddress = req.params.publicAddress;
   const adId = req.params.adId;
