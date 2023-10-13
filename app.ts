@@ -13,6 +13,7 @@ import { FaqRouter } from './src/api/user/faq.route';
 import { UserRouter } from './src/api/user/user.route';
 import { ProfileImageRouter } from './src/api/user/image.route';
 import { SurveyRouter } from './src/api/user/survey.route';
+import { AdRouter } from './src/api/user/ad.route';
 const cors = require('cors');
 const app = express();
 const corsOptions = {
@@ -63,6 +64,7 @@ app.use(LearnMoreRouter);
 app.use(HelpRouter);
 app.use(FaqRouter);
 app.use(SurveyRouter);
+app.use(AdRouter);
 // app.use(KYC1Router);
 // app.use(KYC2Router);
 // app.use(KYC3Router);

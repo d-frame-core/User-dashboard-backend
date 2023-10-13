@@ -86,51 +86,13 @@ interface DFrameUserAttrs {
       timespent: number[];
     }[];
   }[];
-  rewards?: {
-    verificationRewards?: {
-      reward: number;
-      timestamp: string[];
-      rewardCategory: RewardCategory[];
-      status: 'PAID' | 'UNPAID';
-    };
-    dailyRewards?: {
-      rewardsDate: string; // Add a rewardsDate field
-      browserDataRewards: {
-        reward: number;
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      adRewards: {
-        reward: number;
-        adIds: string[];
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      emailDataRewards: {
-        reward: number;
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      callDataRewards: {
-        reward: number;
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      referralRewards: {
-        reward: number;
-        timestamp: string[];
-        referrals: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-    }[];
-  };
 
   userAds?: {
     date: string;
     ads: {
       adsId: string;
       rewards: number;
-      status: 'SEEN' | 'UNSEEN';
+      status: string;
     }[];
   }[];
 }
@@ -182,51 +144,12 @@ interface DFrameUserDoc extends mongoose.Document {
       timespent: number[];
     }[];
   }[];
-  rewards?: {
-    verificationRewards?: {
-      reward: number;
-      timestamp: string[];
-      rewardCategory: RewardCategory[];
-      status: 'PAID' | 'UNPAID';
-    };
-    dailyRewards?: {
-      rewardsDate: string; // Add a rewardsDate field
-      browserDataRewards: {
-        reward: number;
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      adRewards: {
-        reward: number;
-        adIds: string[];
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      emailDataRewards: {
-        reward: number;
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      callDataRewards: {
-        reward: number;
-        timestamp: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-      referralRewards: {
-        reward: number;
-        timestamp: string[];
-        referrals: string[];
-        status: 'PAID' | 'UNPAID';
-      };
-    }[];
-  };
-
   userAds?: {
     date: string;
     ads: {
       adsId: string;
       rewards: number;
-      status: 'SEEN' | 'UNSEEN';
+      status: string;
     }[];
   }[];
 }
@@ -306,48 +229,6 @@ const dFrameUserSchema = new mongoose.Schema(
       },
     ],
 
-    rewards: {
-      verificationRewards: {
-        reward: { type: Number },
-        timestamp: { type: [String] },
-        rewardCategory: { type: [String], enum: Object.values(RewardCategory) },
-        status: { type: String, enum: ['PAID', 'UNPAID'] },
-      },
-      dailyRewards: [
-        {
-          rewardsDate: { type: String }, // Add rewardsDate field
-          browserDataRewards: {
-            reward: { type: Number },
-            timestamp: { type: [String] },
-            status: { type: String, enum: ['PAID', 'UNPAID'] },
-          },
-          adRewards: [
-            {
-              reward: { type: Number },
-              adId: { type: String }, // Change to singular 'adId'
-              timestamp: { type: [String] },
-              status: { type: String, enum: ['PAID', 'UNPAID'] },
-            },
-          ],
-          emailDataRewards: {
-            reward: { type: Number },
-            timestamp: { type: [String] },
-            status: { type: String, enum: ['PAID', 'UNPAID'] },
-          },
-          callDataRewards: {
-            reward: { type: Number },
-            timestamp: { type: [String] },
-            status: { type: String, enum: ['PAID', 'UNPAID'] },
-          },
-          referralRewards: {
-            reward: { type: Number },
-            timestamp: { type: [String] },
-            referrals: { type: [String] }, // Change to singular 'referral'
-            status: { type: String, enum: ['PAID', 'UNPAID'] },
-          },
-        },
-      ],
-    },
     userAds: [
       {
         date: { type: String },
@@ -355,7 +236,7 @@ const dFrameUserSchema = new mongoose.Schema(
           {
             adsId: { type: String },
             rewards: { type: Number },
-            status: { type: String, enum: ['SEEN', 'UNSEEN'] },
+            status: { type: String, default: 'UNSEEN' },
           },
         ],
       },

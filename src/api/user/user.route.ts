@@ -759,295 +759,6 @@ router.patch(
     }
   }
 );
-
-// POST route to add user data as an array
-// router.post('/api/userData/:publicAddress', async (req, res) => {
-//   try {
-//     const publicAddress = req.params.publicAddress;
-//     const dataEntries = req.body; // Array of data entries
-
-//     // Find the user by their publicAddress
-//     let user = await DFrameUser.findOne({ publicAddress });
-
-//     if (!user) {
-//       return res.status(404).json({ error: 'User not found' });
-//     }
-
-//     // Convert timestamp to the desired format
-//     const currentDate = new Date().toLocaleDateString('en-GB');
-
-//     // Iterate through the array of data entries
-//     for (const entry of dataEntries) {
-//       const { urlLink, timestamp, tags, timespent } = entry;
-
-//       // Convert timestamp to the desired format
-//       const formattedTimestamp = new Date(timestamp).toLocaleTimeString(
-//         'en-GB'
-//       );
-
-//       // Check if userData for the current date exists
-//       let userDataForCurrentDate = user.userData?.find(
-//         (data) => data.dataDate === currentDate
-//       );
-
-//       // If userData for the current date exists, check if the URL exists in urlLink
-//       if (userDataForCurrentDate) {
-//         const urlDataIndex = userDataForCurrentDate.urlData.findIndex((data) =>
-//           data.urlLink.has(urlLink)
-//         );
-
-//         if (urlDataIndex !== -1) {
-//           // If the URL exists, update the corresponding timestamps
-//           userDataForCurrentDate.urlData[urlDataIndex].timestamps.push(
-//             formattedTimestamp
-//           );
-//         } else {
-//           // If the URL does not exist, create a new entry
-//           userDataForCurrentDate.urlData.push({
-//             urlLink: new Set([urlLink]),
-//             timestamps: [formattedTimestamp],
-//             tags: [new Set<string>(tags)],
-//             timespent: [timestamp],
-//           });
-//         }
-//       } else {
-//         // Create a new userData object for the current date
-//         userDataForCurrentDate = {
-//           dataDate: currentDate,
-//           urlData: [
-//             {
-//               urlLink: new Set([urlLink]),
-//               timestamps: [formattedTimestamp],
-//               tags: [new Set<string>(tags)],
-//               timespent: [timespent],
-//             },
-//           ],
-//         };
-
-//         // Push the new userData object to the user's userData array
-//         (user.userData as any).push(userDataForCurrentDate);
-//       }
-//     }
-
-//     // Save the updated user document
-//     user = await user.save();
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-
-//   res.json({ message: 'Data stored successfully' });
-// });
-
-// router.post('/api/userData/:publicAddress', async (req, res) => {
-//   try {
-//     const publicAddress = req.params.publicAddress;
-//     const dataEntries = req.body; // Array of data entries
-
-//     // Find the user by their publicAddress
-//     let user = await DFrameUser.findOne({ publicAddress });
-
-//     if (!user) {
-//       return res.status(404).json({ error: 'User not found' });
-//     }
-
-//     // Convert timestamp to the desired format
-//     const currentDate = new Date().toLocaleDateString('en-GB');
-
-//     // Iterate through the array of data entries
-//     for (const entry of dataEntries) {
-//       const { urlLink, timestamp, tags, timespent } = entry;
-
-//       // Convert timestamp to the desired format
-//       const formattedTimestamp = new Date(timestamp).toLocaleTimeString(
-//         'en-GB'
-//       );
-
-//       // Check if userData for the current date exists
-//       let userDataForCurrentDate = user.userData?.find(
-//         (data) => data.dataDate === currentDate
-//       );
-
-//       // If userData for the current date exists, check if the URL exists in urlLink
-//       if (userDataForCurrentDate) {
-//         const urlDataIndex = userDataForCurrentDate.urlData.findIndex((data) =>
-//           data.urlLink.has(urlLink)
-//         );
-
-//         if (urlDataIndex !== -1) {
-//           // If the URL exists, update the corresponding timestamps
-//           userDataForCurrentDate.urlData[urlDataIndex].timestamps.push(
-//             formattedTimestamp
-//           );
-//         } else {
-//           // If the URL does not exist, create a new entry
-//           userDataForCurrentDate.urlData.push({
-//             urlLink: new Set([urlLink]),
-//             timestamps: [formattedTimestamp],
-//             tags: [new Set<string>(tags)],
-//             timespent: [timespent],
-//           });
-//         }
-//       } else {
-//         // Create a new userData object for the current date
-//         userDataForCurrentDate = {
-//           dataDate: currentDate,
-//           urlData: [
-//             {
-//               urlLink: new Set([urlLink]),
-//               timestamps: [formattedTimestamp],
-//               tags: [new Set<string>(tags)],
-//               timespent: [timespent],
-//             },
-//           ],
-//         };
-
-//         // Push the new userData object to the user's userData array
-//         (user.userData as any).push(userDataForCurrentDate);
-//       }
-//     }
-
-//     // Save the updated user document
-//     user = await user.save();
-
-//     // Send a success response after the data is saved
-//     res.json({ message: 'Data stored successfully' });
-//   } catch (error) {
-//     console.error(error);
-
-//     // Send an error response if there is an exception
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
-
-// Define the route
-// Define the route
-// router.get(
-//   '/api/top-sites/:publicAddress',
-//   async (req: Request, res: Response) => {
-//     try {
-//       const publicAddress = req.params.publicAddress;
-
-//       // Find the user by their publicAddress
-//       const user = await DFrameUser.findOne({ publicAddress });
-
-//       if (!user) {
-//         return res.status(404).json({ error: 'User not found' });
-//       }
-
-//       // Initialize an object to store site visit counts
-//       const siteVisitCounts: Record<string, number> = {};
-
-//       // Iterate through user's userData to count site visits
-//       (user as any).userData.forEach((userDataEntry: any) => {
-//         userDataEntry.urlData.forEach((siteData: any) => {
-//           const siteLink: string | any = Array.from(siteData.urlLink)[0]; // Assuming there's only one link per siteData
-//           const siteTimestamps: string[] = siteData.timestamps;
-
-//           // Count the visits for each site
-//           const siteVisits: number = siteTimestamps.length;
-
-//           // Update or initialize the site's visit count in the object
-//           if (siteVisitCounts[siteLink]) {
-//             siteVisitCounts[siteLink] += siteVisits;
-//           } else {
-//             siteVisitCounts[siteLink] = siteVisits;
-//           }
-//         });
-//       });
-
-//       // Convert the site visit counts to an array of objects
-//       const topSites = Object.keys(siteVisitCounts).map((siteLink) => ({
-//         siteLink,
-//         visits: siteVisitCounts[siteLink],
-//       }));
-
-//       // Sort the topSites array in descending order of visits
-//       topSites.sort((a, b) => b.visits - a.visits);
-
-//       res.json({ topSites });
-//     } catch (error) {
-//       console.error(error);
-//       res.status(500).json({ error: 'Internal Server Error' });
-//     }
-//   }
-// );
-// POST /api/user-data/:publicAddress
-// router.post(
-//   '/api/user-data/:publicAddress',
-//   async (req: Request, res: Response) => {
-//     const { publicAddress } = req.params;
-//     const { urlLink, tags, timespent, timestamp } = req.body;
-
-//     // Define currentDate in localeDateString('en-GB') format
-//     const currentDate = new Date().toLocaleDateString('en-GB');
-
-//     try {
-//       const user = await DFrameUser.findOne({ publicAddress });
-
-//       if (!user) {
-//         return res.status(404).json({ error: 'User not found' });
-//       }
-
-//       // Ensure user.userData is defined or initialize it as an empty array
-//       user.userData = user.userData || [];
-
-//       // Convert the received timestamp to localeTimeString('en-GB')
-//       const localeTimeString = new Date(timestamp).toLocaleTimeString('en-GB');
-
-//       // Convert timespent to a number
-//       const parsedTimespent = parseFloat(timespent);
-
-//       // Check if the user already has userData for the currentDate
-//       const existingUserData = user.userData.find(
-//         (data) => data.dataDate === currentDate
-//       );
-
-//       if (existingUserData) {
-//         console.log('existing data is there');
-//         // If data for the same date exists, update it
-//         const existingUrlData = existingUserData.urlData.find(
-//           (urlData) => urlData.urlLink === urlLink
-//         );
-
-//         if (existingUrlData) {
-//           // Website already exists, so just push new timestamp and timespent
-//           existingUrlData.timestamps.push(localeTimeString);
-//           existingUrlData.timespent.push(parsedTimespent);
-//         } else {
-//           // Website doesn't exist yet, so add new entry
-//           existingUserData.urlData.push({
-//             urlLink: urlLink,
-//             timestamps: [localeTimeString],
-//             tags: tags,
-//             timespent: [parsedTimespent],
-//           });
-//         }
-//       } else {
-//         console.log('Adding new data for the current date');
-//         // Add a new entry for the currentDate with an empty timespent array
-//         user.userData.push({
-//           dataDate: currentDate,
-//           urlData: [
-//             {
-//               urlLink: urlLink,
-//               timestamps: [localeTimeString],
-//               tags: tags,
-//               timespent: [parsedTimespent],
-//             },
-//           ],
-//         });
-//       }
-
-//       await user.save();
-
-//       res.status(200).json(user);
-//     } catch (error) {
-//       console.error('Error adding user data:', error);
-//       res.status(500).json({ error: 'Internal server error' });
-//     }
-//   }
-// );
 // POST /api/user-data/:publicAddress
 router.post(
   '/api/user-data/:publicAddress',
@@ -1415,202 +1126,81 @@ router.get(
   }
 );
 
-router.post('/api/update-rewards/:publicAddress', async (req, res) => {
-  const { publicAddress } = req.params;
-  const { browserDataRewards, adRewards, referralRewards } = req.body;
+// Define the route to get the latest unseen ad by public address.
+router.get('/api/user/get-latest-ad/:publicAddress', async (req, res) => {
+  const publicAddress = req.params.publicAddress;
 
   try {
-    // Find the user by publicAddress
+    // Find the user document based on the public address.
     const user = await DFrameUser.findOne({ publicAddress });
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Create a new date with the current timestamp in en-GB format
-    const currentDate = new Date().toLocaleDateString('en-GB');
-
-    // Update the rewards for the specified date or create a new entry
-    const currentTimestamp = '10:45:20'; // A static timestamp
-    (user.rewards as any).dailyRewards = (user.rewards as any).dailyRewards.map(
-      (dailyReward: any) => {
-        if (dailyReward.date === currentDate) {
-          dailyReward.browserDataRewards = {
-            reward: browserDataRewards,
-            timestamp: [currentTimestamp],
-            status: 'UNPAID',
-          };
-          dailyReward.adRewards = [
-            {
-              reward: adRewards,
-              adId: 'ad123', // Replace with your ad ID
-              timestamp: [currentTimestamp],
-              status: 'UNPAID',
-            },
-          ];
-          dailyReward.emailDataRewards = [
-            {
-              reward: 10, // Replace with your email reward value
-              timestamp: [currentTimestamp],
-              status: 'UNPAID',
-            },
-          ];
-          dailyReward.callDataRewards = [
-            {
-              reward: 15, // Replace with your call data reward value
-              timestamp: [currentTimestamp],
-              status: 'UNPAID',
-            },
-          ];
-          dailyReward.referralRewards = [
-            {
-              reward: referralRewards,
-              timestamp: [currentTimestamp],
-              referrals: ['referral9', 'referral10'], // Replace with your referrals
-              status: 'UNPAID',
-            },
-          ];
+    // Search for the latest unseen ad.
+    let latestUnseenAd = null;
+    for (const userAd of user.userAds as any) {
+      for (const ad of userAd.ads) {
+        if (
+          ad.status === 'unseen' &&
+          (!latestUnseenAd || userAd.date > latestUnseenAd.date)
+        ) {
+          latestUnseenAd = ad;
         }
-        return dailyReward;
       }
-    );
+    }
 
-    // Save the updated user document
-    await user.save();
+    if (!latestUnseenAd || !latestUnseenAd.adsId) {
+      return res.json({ latestAdId: null });
+    }
 
-    return res.status(200).json({ message: 'Rewards updated successfully' });
+    res.json({ latestAdId: latestUnseenAd.adsId });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Server error' });
   }
 });
-
-// router.post('/api/update-rewards/:publicAddress', async (req, res) => {
-//   const { publicAddress } = req.params;
-//   const { browserDataRewards, adRewards, referralRewards } = req.body;
-
-//   try {
-//     // Find the user by publicAddress
-//     const user = await DFrameUser.findOne({ publicAddress });
-
-//     if (!user) {
-//       return res.status(404).json({ message: 'User not found' });
-//     }
-
-//     // Create a new date with the current timestamp in en-GB format
-//     const currentDate = new Date().toLocaleDateString('en-GB');
-//     const currentTimestamp = '10:45:20'; // A static timestamp
-
-//     // Find the dailyReward entry for the current date or create a new one
-//     let dailyReward = (user.rewards as any).dailyRewards.find(
-//       (reward: any) => reward.date === currentDate
-//     );
-
-//     if (!dailyReward) {
-//       // If not found, create a new entry
-//       dailyReward = {
-//         date: currentDate,
-//         browserDataRewards: {
-//           reward: 0, // Initialize with 0
-//           timestamp: [],
-//           status: 'UNPAID',
-//         },
-//         adRewards: [],
-//         emailDataRewards: [],
-//         callDataRewards: [],
-//         referralRewards: [],
-//       };
-//       (user.rewards as any).dailyRewards.push(dailyReward);
-//     }
-
-//     // Update rewards for the specified date
-//     dailyReward.browserDataRewards.reward += browserDataRewards;
-//     dailyReward.browserDataRewards.timestamp.push(currentTimestamp);
-//     dailyReward.adRewards.push({
-//       reward: adRewards,
-//       adId: 'ad123', // Replace with your ad ID
-//       timestamp: [currentTimestamp],
-//       status: 'UNPAID',
-//     });
-//     dailyReward.emailDataRewards.push({
-//       reward: 10, // Replace with your email reward value
-//       timestamp: [currentTimestamp],
-//       status: 'UNPAID',
-//     });
-//     dailyReward.callDataRewards.push({
-//       reward: 15, // Replace with your call data reward value
-//       timestamp: [currentTimestamp],
-//       status: 'UNPAID',
-//     });
-//     dailyReward.referralRewards.push({
-//       reward: referralRewards,
-//       timestamp: [currentTimestamp],
-//       referrals: ['referral9', 'referral10'], // Replace with your referrals
-//       status: 'UNPAID',
-//     });
-
-//     // Save the updated user document
-//     await user.save();
-
-//     return res.status(200).json({ message: 'Rewards updated successfully' });
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ message: 'Internal Server Error' });
-//   }
-// });
-router.get('/api/get-rewards-insights/:publicAddress', async (req, res) => {
-  const { publicAddress } = req.params;
+router.post('/api/update-ad-status/:publicAddress/:adId', async (req, res) => {
+  const publicAddress = req.params.publicAddress;
+  const adId = req.params.adId;
 
   try {
-    // Find the user by publicAddress
+    // Find the user document based on the public address.
     const user = await DFrameUser.findOne({ publicAddress });
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    // Calculate insights for the past 7 days
-    const insights = [];
-    const currentDate = new Date().toLocaleDateString('en-GB');
-    let sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-    sevenDaysAgo = (sevenDaysAgo as any).toLocaleDateString('en-GB');
-
-    for (let i = 0; i < 7; i++) {
-      const date = new Date(sevenDaysAgo);
-      date.setDate(date.getDate() + i);
-      const formattedDate = date.toLocaleDateString('en-GB');
-
-      const dailyReward = (user.rewards as any).dailyRewards.find(
-        (reward: any) => reward.rewardsDate === formattedDate
-      );
-
-      if (dailyReward) {
-        const browserDataReward = dailyReward.browserDataRewards.reward;
-        const adDataReward = dailyReward.adRewards.reduce(
-          (total: any, ad: any) => total + ad.reward,
-          0
-        );
-        const referralDataReward = dailyReward.referralRewards.reward;
-
-        insights.push({
-          date: formattedDate,
-          browserDataReward,
-          adDataReward,
-          referralDataReward,
-        });
+    // Find the specific ad and update its status to 'seen'.
+    let adFound = false;
+    for (const userAd of user.userAds as any) {
+      for (const ad of userAd.ads) {
+        if (ad.adsId === adId && ad.status === 'unseen') {
+          ad.status = 'seen';
+          adFound = true;
+          break;
+        }
+      }
+      if (adFound) {
+        break;
       }
     }
 
-    // Filter out days with no data and return available data
-    const availableInsights = insights.filter(
-      (insight) => insight.date !== currentDate
-    );
+    if (!adFound) {
+      return res
+        .status(404)
+        .json({ message: 'Ad not found or already marked as seen' });
+    }
 
-    return res.status(200).json({ insights: availableInsights });
+    // Save the updated user document.
+    await user.save();
+
+    res.json({ message: 'Ad status updated to "seen"' });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
